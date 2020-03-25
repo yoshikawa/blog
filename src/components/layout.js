@@ -1,24 +1,37 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import base from './base.css'
-import Container from './container'
-import Navigation from './navigation'
+import Helmet from 'react-helmet'
+import styled from 'styled-components'
+import Header from './Header'
+import Footer from './Footer'
+import 'prismjs/themes/prism-tomorrow.css'
+import { GlobalStyle } from './Commons'
+import { media } from '../tokens'
+
+const SiteContent = styled.div`
+  margin: 0 0;
+
+  @media ${media.medium} {
+    margin: 60px 0;
+  }
+`
 
 class Template extends React.Component {
   render() {
-    const { location, children } = this.props
-    let header
-
-    let rootPath = `/`
-    if (typeof __PREFIX_PATHS__ !== `undefined` && __PREFIX_PATHS__) {
-      rootPath = __PATH_PREFIX__ + `/`
-    }
+    const { children } = this.props
 
     return (
-      <Container>
-        <Navigation />
-        {children}
-      </Container>
+      <>
+        <Helmet>
+          <link
+            href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap"
+            rel="stylesheet"
+          />
+        </Helmet>
+        <GlobalStyle />
+        <Header />
+        <SiteContent>{children}</SiteContent>
+        <Footer />
+      </>
     )
   }
 }

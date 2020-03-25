@@ -1,82 +1,209 @@
-# gatsby-contentful-starter
+[![Build Status](https://travis-ci.org/maxpou/gatsby-starter-morning-dew.svg?branch=master)](https://travis-ci.org/maxpou/gatsby-starter-morning-dew) [![Netlify Status](https://api.netlify.com/api/v1/badges/d68027bd-19b5-44fd-a2a3-d1f05fc8201e/deploy-status)](https://app.netlify.com/sites/gatsby-starter-morning-dew/deploys) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) [![Maintainability](https://api.codeclimate.com/v1/badges/e09f1ac1a5cdb2987a6f/maintainability)](https://codeclimate.com/github/maxpou/gatsby-starter-morning-dew/maintainability) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
-Gatsby [Contentful](https://www.contentful.com) starter for creating a blog
 
-![The index page of the starter blog](https://rawgit.com/contentful-userland/gatsby-contentful-starter/master/screenshot.jpg "The index page of the starter blog")
+# gatsby-starter-morning-dew
 
-Static sites are scalable, secure and have very little required maintenance. They come with a drawback though. Not everybody feels good editing files, building a project and uploading it somewhere. This is where Contentful comes into play.
+:rocket: A gatsby-starter-morning-dew is a Gatsby starter to build lightning-fast websites!  
+:dizzy: You can also use gatsby-starter-morning-dew as a Gatsby Theme
 
-With Contentful and Gatsby you can connect your favorite static site generator with an API that provides an easy to use interface for people writing content and automate the publishing using services like [Travis CI](https://travis-ci.org/) or [Netlify](https://www.netlify.com/).
+[Demo website.](https://maxpou.github.io/gatsby-starter-morning-dew/)
+
+![screenshot](https://i.imgur.com/nPthSQy.png)
 
 ## Features
 
-* Simple content model and structure. Easy to adjust to your needs.
-* Contentful integration using our [Sync API](https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/synchronization/initial-synchronization-of-entries-of-a-specific-content-type)
-* Using our [Delivery API](https://www.contentful.com/developers/docs/references/content-delivery-api/).
-* Responsive/adaptive images via [gatsby-image](https://www.gatsbyjs.org/packages/gatsby-image/)
+- [:purple_heart: Gatsby v2](https://www.gatsbyjs.org/) / React 16
+- :mag: SEO optimized
+- :love_letter: Write posts/pages in Markdown or [MDX](https://mdxjs.com/)
+  - :art: Code syntax highlight
+  - :books: Multilang support/i18n (blog post)
+- :iphone: Mobile Friendly (Responsive design)
+- :sparkles: PWA ready
+  - :airplane: Offline support
+  - :page_with_curl: Manifest support 
+- [:wrench: Fully configurable (see data/siteConfig.js)](./data/siteConfig.js)
+- :speech_balloon: Disqus support
+- :nail_care: css-in-js (with [styled-components v5](https://www.styled-components.com))
+- :bookmark: Groups post with tags
+- :bar_chart: Google Analytics support
+- :bird: post preview image generation (Twitter, Facebook...)
+- :gem: Developer tools:
+  - eslint
+  - prettier
+- :construction_worker: Travis CI support
 
-## Contribution
 
-This project is part of [contentful-userland](https://github.com/contentful-userland) which means that we’re always open to contributions **and you can be part of userland and shape the project yourself after your first merged pull request**. You can learn more about how contentful userland is organized by visiting [our about repository](https://github.com/contentful-userland/about).
+![Lighthouse scores (locally :bowtie:)](https://lighthouse.now.sh/?perf=100&pwa=100&a11y=100&bp=100&seo=100)
 
-## Requirements
+## Installation (starter)
 
-To use this project you have to have a Contentful account. If you don't have one yet you can register at [www.contentful.com/sign-up](https://www.contentful.com/sign-up/).
-
-## Getting started
-
-Install [Yarn](https://yarnpkg.com/en/docs/install) (if you haven't already).
-
-### Get the source code and install dependencies.
-
+* with Gatsby-cli: 
+  
+```bash
+npm install --global gatsby-cli
+gatsby new gatsby-blog https://github.com/maxpou/gatsby-starter-morning-dew
 ```
-$ git clone git@github.com:contentful-userland/gatsby-contentful-starter.git
-$ yarn install
+
+* without Gatsby-cli
+
+```bash
+git clone my-site git@github.com:maxpou/gatsby-starter-morning-dew.git
+cd my-site
+npm install
 ```
 
-Or use the [Gatsby CLI](https://www.npmjs.com/package/gatsby-cli).
+Then run `npm run develop` to try it locally.
 
+
+## Installation (theme)
+
+You can also use `gatsby-starter-morning-dew` as a [Gatsby theme](https://www.gatsbyjs.org/blog/2018-11-11-introducing-gatsby-themes/)!
+
+1. Add the theme
+  ```bash
+  npm install gatsby-starter-morning-dew
+  ```
+2. In your `gatsby-config.js`, add:
+  ```js
+  const config = require('./data/siteConfig')
+  // ...
+  plugins: [
+      {
+        resolve: "gatsby-starter-morning-dew",
+        options: {},
+      },
+      {
+        resolve: `gatsby-plugin-manifest`,
+        options: {
+          name: config.siteTitle,
+          short_name: config.siteTitle,
+          start_url: config.pathPrefix,
+          background_color: config.background_color,
+          theme_color: config.theme_color,
+          display: config.display,
+          icon: 'content/images/company-icon.png', // path to your image
+        },
+      },
+  ],
+  ```
+3. Add an image called `baymax.png` in `content/images/baymax.png`.  
+🐞This is due to a theme limitations.  
+😬 Don't worry, this picture will not appear on your website!
+
+Need more details? Checkout:
+* [maxpou.fr source](https://github.com/maxpou/maxpou.fr): Maxence Poutord's personnal blog;
+* [gatsby-groot source](https://github.com/maxpou/gatsby-groot/): a minimalist blog that use this template!
+
+
+## Commands
+
+```sh
+# working locally
+npm run dev
+
+# generate build
+npm run build
+
+# format code
+npm run format
+
+# lint code
+npm run lint
+
+# Generate generate post preview images (npm run dev need to run before)
+npm run generatePostPreviewImages
 ```
-$ gatsby new contentful-starter https://github.com/contentful-userland/gatsby-contentful-starter
+
+**:warning: Add `--prefix-paths` if you are using path prefix!**
+
+## Configure
+
+```js
+module.exports = {
+  siteTitle: 'gatsby-starter-morning-dew',
+  siteDescription: 'A Gatsby theme/starter to build lightning-fast websites',
+  authorName: 'Maxence Poutord',
+  twitterUsername: '_maxpou',
+  authorAvatar: 'avatar.jpeg', // file in content/images
+  defaultLang: 'en', // show flag if lang is not default. Leave empty to enable flags in post lists
+  authorDescription: `
+  For the last decade, Maxence Poutord has worked with a variety of web technologies. He is currently focused on front-end development.
+  On his day to day job, he is working as a senior front-end engineer at VSware. He is also a frequent tech speaker and a mentor.
+  As a new digital nomad, he is living where the WIFI and sun is 😎 <br>
+  Do you want to know more? <a href="https://www.maxpou.fr/about" target="_blank">Visit my website!</a>
+  `,
+  siteUrl: 'https://maxpou.github.io/',
+  disqusSiteUrl: 'https://www.maxpou.fr/',
+  // Prefixes all links. For cases when deployed to maxpou.fr/gatsby-starter-morning-dew/
+  pathPrefix: '/gatsby-starter-morning-dew', // Note: it must *not* have a trailing slash.
+  siteCover: 'cover-baymax.jpeg', // file in content/images
+  googleAnalyticsId: 'UA-67868977-1',
+  background_color: '#ffffff',
+  theme_color: '#222222',
+  display: 'standalone',
+  icon: 'content/images/baymax.png',
+  postsPerPage: 6,
+  disqusShortname: 'maxpou',
+  headerTitle: 'gatsby-starter-morning-dew',
+  headerLinksIcon: 'baymax.png', // file in content/images (leave empty to disable: '')
+  headerLinks: [
+    {
+      label: 'Blog',
+      url: '/',
+    },
+    {
+      label: 'About',
+      url: '/about-gatsby-starter-morning-dew',
+    },
+    {
+      label: 'Installation',
+      url: '/how-to-install',
+    },
+  ],
+  // Footer information (ex: Github, Netlify...)
+  websiteHost: {
+    name: 'GitHub',
+    url: 'https://github.com',
+  },
+  footerLinks: [
+    {
+      sectionName: 'Explore',
+      links: [
+        {
+          label: 'Blog',
+          url: '/',
+        },
+        {
+          label: 'About',
+          url: '/about-gatsby-starter-morning-dew',
+        },
+        {
+          label: 'Installation',
+          url: '/how-to-install',
+        },
+      ],
+    },
+    {
+      sectionName: 'Follow the author',
+      links: [
+        {
+          label: 'Github',
+          url: 'https://github.com/maxpou/gatsby-starter-morning-dew',
+        },
+        {
+          label: 'Website',
+          url: 'https://www.maxpou.fr',
+        },
+        {
+          label: 'Twitter',
+          url: 'https://twitter.com/_maxpou',
+        },
+      ],
+    },
+  ],
+}
 ```
 
-### Set up of the needed content model and create a configuration file
+## Deploy
 
-This project comes with a Contentful setup command `yarn run setup`.
-
-![Command line dialog of the yarn run setup command](https://rawgit.com/contentful-userland/gatsby-contentful-starter/master/setup.jpg "Command line dialog of the yarn run setup command")
-
-This command will ask you for a space ID, and access tokens for the Contentful Management and Delivery API and then import the needed content model into the space you define and write a config file (`./contentful.json`).
-
-`yarn run setup` automates that for you but if you want to do it yourself rename `.contentful.json.sample` to `.contentful.json` and add your configuration in this file.
-
-## Crucial Commands
-
-This project comes with a few handy commands for linting and code fixing. The most important ones are the ones to develop and ship code. You can find the most important commands below.
-
-### `yarn run dev`
-
-Run in the project locally.
-
-### `yarn run build`
-
-Run a production build into `./public`. The result is ready to be put on any static hosting you prefer.
-
-### `yarn run deploy`
-
-Run a production build into `./public` and publish the site to GitHub pages.
-
-### `yarn run cleanup-repository`
-
-Removes all dependencies, scripts and data from the installation script.
-
-## Roadmap
-
-- [x] [make the starter completely responsive](https://github.com/contentful-userland/gatsby-contentful-starter/issues/2)
-- [ ] [include tags](https://github.com/contentful-userland/gatsby-contentful-starter/issues/3)
-- [x] [support traced placeholders](https://github.com/contentful-userland/gatsby-contentful-starter/issues/4)
-- [ ] [add i18n](https://github.com/contentful-userland/gatsby-contentful-starter/issues/6)
-
-## Other resources
-
-- Tutorial video series ["Building a blazing fast website with GatsbyJS and Contentful"](https://www.youtube.com/watch?v=Ek4o40w1tH4&list=PL8KiuH6vpACV-F7jXribe4YveGBhBeG9A) by @Khaledgarbaya
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/maxpou/gatsby-starter-morning-dew)
