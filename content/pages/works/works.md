@@ -1,6 +1,6 @@
 ---
 title: How to install
-slug: how-to-install
+slug: works
 cover: ./cover.png
 disqus: true
 ---

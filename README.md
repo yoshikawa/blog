@@ -1,14 +1,11 @@
-[![Build Status](https://travis-ci.org/maxpou/gatsby-starter-morning-dew.svg?branch=master)](https://travis-ci.org/maxpou/gatsby-starter-morning-dew) [![Netlify Status](https://api.netlify.com/api/v1/badges/d68027bd-19b5-44fd-a2a3-d1f05fc8201e/deploy-status)](https://app.netlify.com/sites/gatsby-starter-morning-dew/deploys) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) [![Maintainability](https://api.codeclimate.com/v1/badges/e09f1ac1a5cdb2987a6f/maintainability)](https://codeclimate.com/github/maxpou/gatsby-starter-morning-dew/maintainability) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![Build Status](https://travis-ci.com/yoshikawa/yoshikawa-blog.svg?branch=master)](https://travis-ci.com/yoshikawa/yoshikawa-blog) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)　[![Maintainability](https://api.codeclimate.com/v1/badges/01ba04a0dbd8025ac897/maintainability)](https://codeclimate.com/github/yoshikawa/yoshikawa-blog/maintainability) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 
-# gatsby-starter-morning-dew
+# yoshikawa-blog
 
-:rocket: A gatsby-starter-morning-dew is a Gatsby starter to build lightning-fast websites!  
-:dizzy: You can also use gatsby-starter-morning-dew as a Gatsby Theme
 
-[Demo website.](https://maxpou.github.io/gatsby-starter-morning-dew/)
 
-![screenshot](https://i.imgur.com/nPthSQy.png)
+[Go to my website.](https://yoshikawa.dev)
 
 ## Features
 
@@ -34,26 +31,6 @@
 
 
 ![Lighthouse scores (locally :bowtie:)](https://lighthouse.now.sh/?perf=100&pwa=100&a11y=100&bp=100&seo=100)
-
-## Installation (starter)
-
-* with Gatsby-cli: 
-  
-```bash
-npm install --global gatsby-cli
-gatsby new gatsby-blog https://github.com/maxpou/gatsby-starter-morning-dew
-```
-
-* without Gatsby-cli
-
-```bash
-git clone my-site git@github.com:maxpou/gatsby-starter-morning-dew.git
-cd my-site
-npm install
-```
-
-Then run `npm run develop` to try it locally.
-
 
 ## Installation (theme)
 

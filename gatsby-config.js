@@ -95,7 +95,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-compile-es6-packages',
       options: {
-        modules: ['gatsby-starter-morning-dew'],
+        modules: ['yoshikawa-blog'],
       },
     },
   ],

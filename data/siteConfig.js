@@ -1,29 +1,29 @@
 module.exports = {
-  siteTitle: 'gatsby-starter-morning-dew',
-  siteDescription: 'A Gatsby theme/starter to build lightning-fast websites',
-  authorName: 'Maxence Poutord',
-  twitterUsername: '_maxpou',
+  siteTitle: 'よしかわーるど',
+  siteDescription: '情報系大学生が新しい世界を作る',
+  authorName: 'Yoshikawa Taiki',
+  twitterUsername: 'yoshikawataiki',
   authorAvatar: 'avatar.jpeg', // file in content/images
-  defaultLang: 'en', // show flag if lang is not default. Leave empty to enable flags in post lists
+  defaultLang: 'ja', // show flag if lang is not default. Leave empty to enable flags in post lists
   authorDescription: `
   For the last decade, Maxence Poutord has worked with a variety of web technologies. He is currently focused on front-end development.
   On his day to day job, he is working as a senior front-end engineer at VSware. He is also an occasional tech speaker and a mentor.
   As a digital nomad, he is living where the WiFi and sun are 😎 <br>
   Do you want to know more? <a href="https://www.maxpou.fr/about" target="_blank">Visit my website!</a>
   `,
-  siteUrl: 'https://maxpou.github.io/',
-  disqusSiteUrl: 'https://www.maxpou.fr/',
+  siteUrl: 'https://yoshikawa.dev/',
+  disqusSiteUrl: 'https://yoshikawa.dev/',
   // Prefixes all links. For cases when deployed to maxpou.fr/gatsby-starter-morning-dew/
-  pathPrefix: '/gatsby-starter-morning-dew', // Note: it must *not* have a trailing slash.
+  pathPrefix: '', // Note: it must *not* have a trailing slash.
   siteCover: 'cover-baymax.jpeg', // file in content/images
-  googleAnalyticsId: 'UA-67868977-1',
+  googleAnalyticsId: 'UA-87746836-1',
   background_color: '#ffffff',
   theme_color: '#222222',
   display: 'standalone',
   icon: 'content/images/baymax.png',
   postsPerPage: 6,
-  disqusShortname: 'maxpou',
-  headerTitle: 'gatsby-starter-morning-dew',
+  disqusShortname: 'yoshikawataiki',
+  headerTitle: 'よしかわーるど',
   headerLinksIcon: 'baymax.png', //  (leave empty to disable: '')
   headerLinks: [
     {
@@ -32,11 +32,11 @@ module.exports = {
     },
     {
       label: 'About',
-      url: '/about-gatsby-starter-morning-dew',
+      url: '/about',
     },
     {
-      label: 'Installation',
-      url: '/how-to-install',
+      label: 'Works',
+      url: '/works',
     },
   ],
   // Footer information (ex: Github, Netlify...)
@@ -54,11 +54,11 @@ module.exports = {
         },
         {
           label: 'About',
-          url: '/about-gatsby-starter-morning-dew',
+          url: '/about',
         },
         {
-          label: 'Installation',
-          url: '/how-to-install',
+          label: 'Works',
+          url: '/works',
         },
       ],
     },
@@ -67,15 +67,15 @@ module.exports = {
       links: [
         {
           label: 'GitHub',
-          url: 'https://github.com/maxpou/gatsby-starter-morning-dew',
+          url: 'https://github.com/yoshikawa',
         },
         {
-          label: 'Website',
-          url: 'https://www.maxpou.fr',
+          label: 'YouTube',
+          url: 'https://www.youtube.com/channel/UCyh8xiVW6ck473ht6Dav2VA?sub_confirmation=1',
         },
         {
           label: 'Twitter',
-          url: 'https://twitter.com/_maxpou',
+          url: 'https://twitter.com/yoshikawataiki',
         },
       ],
     },
