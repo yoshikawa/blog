@@ -38,5 +38,6 @@ jobs:
         skip_cleanup: true
         github_token: $BLOG_TOKEN
         local_dir: public
+        fqdn: yoshikawa.dev
         on:
           branch: master
