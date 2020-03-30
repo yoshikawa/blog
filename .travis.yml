@@ -36,7 +36,7 @@ jobs:
       deploy:
         provider: pages
         skip_cleanup: true
-        github_token: $GITHUB_TOKEN
+        github_token: $BLOG_TOKEN
         local_dir: public
         on:
           branch: master
