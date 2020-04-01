@@ -6,10 +6,8 @@ module.exports = {
   authorAvatar: 'avatar.jpeg', // file in content/images
   defaultLang: 'ja', // show flag if lang is not default. Leave empty to enable flags in post lists
   authorDescription: `
-  For the last decade, Maxence Poutord has worked with a variety of web technologies. He is currently focused on front-end development.
-  On his day to day job, he is working as a senior front-end engineer at VSware. He is also an occasional tech speaker and a mentor.
-  As a digital nomad, he is living where the WiFi and sun are 😎 <br>
-  Do you want to know more? <a href="https://www.maxpou.fr/about" target="_blank">Visit my website!</a>
+  モバイルネットワークについて研究をしている。現在、ネットワークが抱えている問題を解決するための技術を研究室独自で開発中。
+  高校からの親友と2020年に起業することを決めている。また、2020年に自身の会社を立ち上げる予定である。
   `,
   siteUrl: 'https://yoshikawa.dev/',
   disqusSiteUrl: 'https://yoshikawa.dev/',
@@ -22,7 +20,7 @@ module.exports = {
   display: 'standalone',
   icon: 'content/images/baymax.png',
   postsPerPage: 6,
-  disqusShortname: 'yoshikawataiki',
+  disqusShortname: 'yoshikawa',
   headerTitle: 'よしかわーるど',
   headerLinksIcon: 'baymax.png', //  (leave empty to disable: '')
   headerLinks: [

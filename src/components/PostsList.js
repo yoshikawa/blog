@@ -14,7 +14,7 @@ class PostsList extends React.Component {
             excerpt: post.node.excerpt,
             slug: post.node.frontmatter.slug,
             timeToRead: post.node.timeToRead,
-            language: post.node.frontmatter.language || 'fr',
+            language: post.node.frontmatter.language || 'ja',
             tags: post.node.frontmatter.tags || [],
           }
           return <PostsListItem key={props.slug} {...props} />
