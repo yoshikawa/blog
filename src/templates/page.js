@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Layout from '../components/layout'
+import Template from '../components/layout'
 import Content from '../components/Content'
 import Wrapper from '../components/Wrapper'
 import Hero from '../components/Hero'
@@ -12,7 +12,7 @@ export default props => {
   const page = props.data.page
 
   return (
-    <Layout location={props.location}>
+    <Template location={props.location}>
       <SEO
         title={page.frontmatter.title}
         description={page.excerpt}
@@ -36,7 +36,7 @@ export default props => {
           <Disqus slug={page.frontmatter.slug} title={page.frontmatter.title} />
         </Wrapper>
       )}
-    </Layout>
+    </Template>
   )
 }
 
