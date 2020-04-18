@@ -1,10 +1,10 @@
 ---
 title: "GitHubの芝生を1年間生やし続ける"
-slug: social-media-card-generator
+slug: github-lawn
 date: 2020-04-17
 published: true
 unlisted: false
-language: ja
+language: jp
 cover: ./github-lawn.jpg
 imageShare: ./github-lawn.jpg
 tags:
