@@ -38,7 +38,7 @@
     "@mdx-js/react": "^1.5.8",
     "babel-plugin-styled-components": "^1.10.7",
     "disqus-react": "^1.0.8",
-    "gatsby": "^2.20.24",
+    "gatsby": "^2.20.26",
     "gatsby-image": "^2.3.4",
     "gatsby-plugin-compile-es6-packages": "^2.1.0",
     "gatsby-plugin-google-analytics": "^2.2.4",
@@ -52,7 +52,7 @@
     "gatsby-remark-autolink-headers": "^2.2.3",
     "gatsby-remark-copy-linked-files": "^2.2.3",
     "gatsby-remark-images": "^3.2.4",
-    "gatsby-remark-prismjs": "^3.4.3",
+    "gatsby-remark-prismjs": "^3.4.4",
     "gatsby-remark-responsive-iframe": "^2.3.3",
     "gatsby-remark-smartypants": "^2.2.3",
     "gatsby-source-filesystem": "^2.2.4",
@@ -70,10 +70,10 @@
     "prettier": "^2.0.4",
     "puppeteer": "^3.0.0",
     "semantic-release": "^17.0.6",
-    "yaml": "^1.9.0"
+    "yaml": "^1.9.2"
   },
   "peerDependencies": {
-    "gatsby": "^2.20.24",
+    "gatsby": "^2.20.26",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   }
