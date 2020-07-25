@@ -60,7 +60,7 @@ HTTPの歴史を話していく上で、いくつか便利なツールを紹介�
 
 詳しくは、以下のURLからどうぞ。
 
-[curlについて学ぶ](https://yoshikawa.dev/posts/curl)
+[curlについて学ぶ](https://yoshikawa.dev/curl)
 
 ### HTTPの歴史
 
@@ -203,7 +203,7 @@ HTTP/1.1でネックだった、バイナリデータを多重に送受信する
 
 curlコマンドを使ってヘッダーを送ってみましょう。
 
-[curlについて学ぶ](https://yoshikawa.dev/posts/curl)にも書いてありますが、こちらにも記載します。
+[curlについて学ぶ](https://yoshikawa.dev/curl)にも書いてありますが、こちらにも記載します。
 
 まず以下のURLからリポジトリをクローンしてください。
 
