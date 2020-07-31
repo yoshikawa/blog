@@ -23,3 +23,12 @@ disqus: true
 - オーバーレイ・ネットワーク
 - 通信プロトコル
 - IoTフィールドセンシング
+
+### インターン歴
+
+- October 5-30, 2020: Sansan　インターン
+- September 15-30, 2020: マネーフォワード　インターン
+- August 18-28, 2020: 二子玉川夏の陣2020 A日程
+- February 27-28, 2019: Sunrise VOYAGE GROUP
+- August 13-31, 2018: Treasure VOYAGE GROUP
+- March 22, 2018: 1day infrastructure intern Cookpad
