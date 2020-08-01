@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: Arial, Meiryo, sans-serif;
   color: ${colors.text};
   background-color: ${colors.background};
 }
