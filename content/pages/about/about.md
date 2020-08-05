@@ -26,9 +26,10 @@ disqus: true
 
 ### インターン歴
 
-- October 5-30, 2020: Sansan　インターン
-- September 15-30, 2020: マネーフォワード　インターン
-- August 18-28, 2020: 二子玉川夏の陣2020 A日程
+- October 5-30, 2020: [Sansan Summer Intern](https://jp.corp-sansan.com/newgrads/ssi2020)
+- September 15-30, 2020: マネーフォワード インターン
+- September 3-11, 2020: [CyberAgent 7days サーバーサイド向け 体験就業型インターンシップ](https://www.cyberagent.co.jp/careers/students/event/detail/id=24424)
+- August 18-28, 2020: [楽天 二子玉川夏の陣2020 A日程](https://commerce-engineer.rakuten.careers/careers/graduates/internship/summer-short)
 - February 27-28, 2019: Sunrise VOYAGE GROUP
 - August 13-31, 2018: Treasure VOYAGE GROUP
 - March 22, 2018: 1day infrastructure intern Cookpad
