@@ -208,7 +208,7 @@ complex64 型は、実数と虚数を float32 型で扱います。また、comp
 
 そのため、一部分のみ変更した文字列が必要な場合は、新しい文字列をメモリ上に作成する必要があります。
 
-```go:title=main.go
+```go
 package main
 
 import "fmt"
