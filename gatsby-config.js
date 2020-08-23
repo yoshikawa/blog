@@ -98,5 +98,11 @@ module.exports = {
         modules: ['yoshikawa-blog'],
       },
     },
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        output: `/sitemap.xml`,
+      },
+    }
   ],
 }
