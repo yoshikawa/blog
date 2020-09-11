@@ -2,7 +2,7 @@
 title: 'BufbuildとProtocについて'
 slug: bufbuild
 date: 2020-09-11
-published: false
+published: true
 unlisted: false
 language: jp
 cover: ./bufbuild.png
