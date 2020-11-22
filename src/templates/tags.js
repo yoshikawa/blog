@@ -1,9 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
-import get from 'lodash/get'
 
-import Template from '../components/layout'
+import Layout from '../components/layout'
 import PostsList from '../components/PostsList'
 import Wrapper from '../components/Wrapper'
 import SEO from '../components/SEO'
@@ -16,10 +15,10 @@ const PageTitle = styled.h1`
 class Tags extends React.Component {
   render() {
     const pageTitle = `#${this.props.pageContext.tag}`
-    const posts = get(this, 'props.data.posts.edges')
+    const posts = this.props.data.posts.edges
 
     return (
-      <Template location={this.props.location}>
+      <Layout location={this.props.location}>
         <SEO title={`Top blog posts on ${this.props.pageContext.tag}`} />
         <Hero title={pageTitle} />
 
@@ -27,7 +26,7 @@ class Tags extends React.Component {
           <PageTitle>Posts tagged as {this.props.pageContext.tag}</PageTitle>
           <PostsList posts={posts} />
         </Wrapper>
-      </Template>
+      </Layout>
     )
   }
 }
