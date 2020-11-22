@@ -2,14 +2,13 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import useSiteMetadata from '../hooks/use-site-config'
-import { colors } from '../tokens'
 
 const FooterWrapper = styled.footer`
   text-align: left;
   padding-top: 30px;
   padding-bottom: 50px;
-  background-color: ${colors.primary};
-  color: ${colors.textLightest};
+  background-color: var(--color-primary);
+  color: var(--color-white);
   padding-left: 20px;
   padding-right: 20px;
   margin: 0 auto;
@@ -25,40 +24,44 @@ const FooterWrapper = styled.footer`
       flex: 1 auto;
       display: inline-flex;
       flex-direction: column;
-      margin-bottom: 1em;
       padding-right: 1em;
     }
   }
 
   & a {
-    color: ${colors.textLightest};
+    color: var(--color-white);
     font-weight: bold;
 
     &:hover {
-      color: ${colors.textLightestHover};
-      /* border-bottom: 1px dotted ${colors.textLightestHover}; */
+      color: var(--color-grey200);
     }
   }
 
   .footer-col > p {
     margin: 0;
   }
+
   .footer-title {
+    font-size: 0.83em;
     margin: 0 0 1rem;
   }
 
   .footer-item {
-    padding: 0.25rem 0;
-    color: ${colors.textLightest};
+    color: var(--color-white);
+
+    & a {
+      padding: 0.25rem 0;
+      display: block;
+    }
   }
 
   .footer-heart {
-    color: ${colors.heartFooter};
+    color: var(--color-red);
   }
 
   .footer-item-text {
     padding: 0.1rem 0;
-    color: ${colors.textLightest};
+    color: var(--color-white);
   }
 
   .footer-header {
@@ -66,6 +69,11 @@ const FooterWrapper = styled.footer`
     margin: 0 0.25rem;
     margin-right: 0.25rem;
     padding: 0.25rem;
+  }
+
+  .footer-column-items {
+    grid-template-columns: 1fr;
+    display: grid;
   }
 
   @media (max-width: 564px) {
@@ -100,12 +108,14 @@ const Footer = () => {
   const FooterColumn = ({ column }) => {
     return (
       <div className="footer-col">
-        <h5 className="footer-title" key={column.sectionName}>
+        <h3 className="footer-title" key={column.sectionName}>
           {column.sectionName}
-        </h5>
-        {column.links.map((item, i) => {
-          return <FooterItem item={item} key={`footer-column-item-${i}`} />
-        })}
+        </h3>
+        <div className="footer-column-items">
+          {column.links.map((item, i) => {
+            return <FooterItem item={item} key={`footer-column-item-${i}`} />
+          })}
+        </div>
       </div>
     )
   }
@@ -114,9 +124,9 @@ const Footer = () => {
     <FooterWrapper>
       <nav>
         <div className="footer-col">
-          <h5 className="footer-title">
+          <h3 className="footer-title">
             {authorName} © {new Date().getFullYear()}
-          </h5>
+          </h3>
           <p className="footer-item-text">
             Built with{' '}
             <a className="footer-link" href="https://www.gatsbyjs.org">

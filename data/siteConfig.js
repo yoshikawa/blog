@@ -12,7 +12,6 @@ module.exports = {
   siteUrl: 'https://yoshikawa.dev/',
   disqusSiteUrl: 'https://yoshikawa.dev/',
   // Prefixes all links. For cases when deployed to maxpou.fr/gatsby-starter-morning-dew/
-  pathPrefix: '', // Note: it must *not* have a trailing slash.
   siteCover: 'cover-baymax.jpeg', // file in content/images
   googleAnalyticsId: 'UA-87746836-1',
   background_color: '#ffffff',
@@ -69,7 +68,8 @@ module.exports = {
         },
         {
           label: 'YouTube',
-          url: 'https://www.youtube.com/channel/UCyh8xiVW6ck473ht6Dav2VA?sub_confirmation=1',
+          url:
+            'https://www.youtube.com/channel/UCyh8xiVW6ck473ht6Dav2VA?sub_confirmation=1',
         },
         {
           label: 'Twitter',

@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import { createGlobalStyle } from 'styled-components'
 import useSiteMetadata from '../hooks/use-site-config'
 import useSiteImages from '../hooks/use-site-images'
-import colors from '../tokens/colors'
 
 const GlobalPageStyle = createGlobalStyle`
   * {
@@ -18,11 +17,6 @@ const GlobalPageStyle = createGlobalStyle`
   }
 `
 
-// styled.div.attrs({ color: p => p.color });
-styled.div.attrs(p => ({
-  color: p.color,
-}))
-
 const Wrapper = styled.div`
   width: ${props => props.width || 440}px;
   height: ${props => props.height || 220}px;
@@ -31,7 +25,7 @@ const Wrapper = styled.div`
   justify-content: center;
   vertical-align: middle;
   text-align: center;
-  background-color: ${colors.socialMediaCardFilter};
+  background-color: #437abf;
   position: relative;
 `
 
@@ -46,8 +40,8 @@ const Square = styled.div`
 const Preview = styled.div`
   width: ${props => props.width || 440}px;
   height: ${props => props.height || 220}px;
-  background-image: url("${props =>
-    props.hero || withPrefix(props.siteCover)}");
+  background-image: url('${props =>
+    props.hero || withPrefix(props.siteCover)}');
   background-position: center;
   background-size: cover;
   position: absolute;

@@ -84,7 +84,6 @@ module.exports = {
       options: {
         name: config.siteTitle,
         short_name: config.siteTitle,
-        start_url: config.pathPrefix,
         background_color: config.background_color,
         theme_color: config.theme_color,
         display: config.display,
@@ -95,14 +94,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-compile-es6-packages',
       options: {
-        modules: ['yoshikawa-blog'],
+        modules: ['gatsby-starter-morning-dew'],
       },
     },
-    {
-      resolve: 'gatsby-plugin-sitemap',
-      options: {
-        output: `/sitemap.xml`,
-      },
-    }
   ],
 }
