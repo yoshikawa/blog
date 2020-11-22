@@ -3,7 +3,7 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 
-import Template from '../components/layout'
+import Layout from '../components/layout'
 import Wrapper from '../components/Wrapper'
 import SEO from '../components/SEO'
 import RelatedPosts from '../components/RelatedPosts'
@@ -59,7 +59,7 @@ const NotFoundPage = props => {
   const posts = data.posts.edges
 
   return (
-    <Template location={props.location} noCover={true}>
+    <Layout location={props.location} noCover={true}>
       <SEO title="Page Not Found" />
       <Wrapper>
         <MainTitle>404 Page Not Found</MainTitle>
@@ -75,7 +75,7 @@ const NotFoundPage = props => {
 
         <RelatedPosts posts={posts} />
       </Wrapper>
-    </Template>
+    </Layout>
   )
 }
 
