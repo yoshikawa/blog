@@ -14,7 +14,6 @@
     "url": "https://github.com/yoshikawa/yoshikawa-blog/issues"
   },
   "repository": {
-    "type": "git",
     "url": "https://github.com/yoshikawa/yoshikawa-blog.git"
   },
   "license": "MIT",
