@@ -77,5 +77,43 @@
     "gatsby": "^2.27.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
+  },
+  "release": {
+    "branches": [
+      "master"
+    ],
+    "prepare": [
+      "@semantic-release/changelog",
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": false
+        }
+      ],
+      {
+        "path": "@semantic-release/git",
+        "message": "chore(devops-webapp): release ${nextRelease.version}\n\n${nextRelease.notes}"
+      }
+    ],
+    "publish": [
+      "@semantic-release/github",
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": false
+        }
+      ]
+    ],
+    "verifyConditions": [
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": false
+        }
+      ],
+      "@semantic-release/github"
+    ],
+    "success": false,
+    "fail": false
   }
 }
