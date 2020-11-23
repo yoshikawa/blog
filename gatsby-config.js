@@ -6,10 +6,14 @@ module.exports = {
     title: config.siteTitle,
     author: config.authorName,
     description: config.siteDescription,
+    siteUrl: 'https://yoshikawa.dev/',
     ...config,
   },
   pathPrefix: config.pathPrefix,
   plugins: [
+    {
+      resolve: `gatsby-plugin-cname`,
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
