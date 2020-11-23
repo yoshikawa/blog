@@ -27,6 +27,7 @@ jobs:
       deploy:
         provider: script
         skip_cleanup: true
+        github_token: $GH_TOKEN
         script:
           - npx semantic-release
     - stage: deploy
