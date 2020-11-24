@@ -15,6 +15,9 @@ module.exports = {
       resolve: `gatsby-plugin-cname`,
     },
     {
+      resolve: `gatsby-plugin-sitemap`,
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: 'posts',
