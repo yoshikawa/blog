@@ -1,5 +1,5 @@
 {
-  "name": "yoshikawa-blog",
+  "name": "blog",
   "version": "0.0.0-development",
   "description": "Yoshikawa Blog",
   "keywords": [
@@ -9,13 +9,13 @@
     "gatsby-theme",
     "starter"
   ],
-  "homepage": "https://github.com/yoshikawa/yoshikawa-blog#readme",
+  "homepage": "https://github.com/yoshikawa/blog#readme",
   "bugs": {
-    "url": "https://github.com/yoshikawa/yoshikawa-blog/issues"
+    "url": "https://github.com/yoshikawa/blog/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yoshikawa/yoshikawa-blog.git"
+    "url": "https://github.com/yoshikawa/blog.git"
   },
   "license": "MIT",
   "author": "Yoshikawa Taiki <yoshikawataiki@gmail.com>",
