@@ -17,8 +17,13 @@ jobs:
     - stage: performance_budget
       node_js: lts/*
       if: type = pull_request
-      script: 
-        - ./scripts/budget.sh
+      before_install:
+        - npm install -g @lhci/cli@0.3.x
+      script:
+        - npm run build
+        - lhci autorun
+      addons:
+        chrome: stable
     - stage: deploy
       if: branch = master
       node_js: lts/*
