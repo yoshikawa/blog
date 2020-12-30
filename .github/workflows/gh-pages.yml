@@ -3,7 +3,8 @@ name: GitHub Pages
 on:
   push:
     branches:
-      - source
+      - master
+
 jobs:
   build:
     runs-on: ubuntu-latest
