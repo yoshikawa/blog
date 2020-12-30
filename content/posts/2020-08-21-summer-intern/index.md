@@ -29,12 +29,12 @@ tags:
 - 9月3-11日: [CyberAgent 7days サーバーサイド向け 体験就業型インターンシップ](https://www.cyberagent.co.jp/careers/students/event/detail/id=24424)
 - 9月15-30日: マネーフォワード インターン
 - 10月5-30日: [Sansan Summer Intern](https://jp.corp-sansan.com/newgrads/ssi2020)
-- 就業期間未定: [ZOZOテクノロジーズ いつでもどこでもインターン](https://tech.zozo.com/recruit/2022intern/)
+- 11月4-24日: [ZOZOテクノロジーズ いつでもどこでもインターン](https://tech.zozo.com/recruit/2022intern/)
 
 ### 残念ながら、選考を落ちた企業一覧
 
 後日、Yahoo! Japanからは、フィードバックの面談があり、選考を落ちた理由や評価点を教えていただきました。
-選考を落ちた理由は、インターンコースと僕の希望理由の乖離だけ とのことなので、Yahoo! Japanの本選考に進みたいと思います。
+選考を落ちた理由は、インターンコースと僕の希望理由の乖離だけとのことなので、Yahoo! Japanの本選考に進みたいと思います。
 
 - Yahoo! Japan
 - DeNA
