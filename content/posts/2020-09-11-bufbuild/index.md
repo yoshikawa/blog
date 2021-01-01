@@ -27,7 +27,7 @@ tags:
 
 ## bufとは
 
-[Bufbuild/buf](https://github.com/bufbuild/buf)とは、Uberが作成していた[uber/prototool](https://github.com/uber/prototool)などのProtobufの問題を解決しようとしているツールです。prototoolなどのprotocサポートツールなども、こちらへの移行を推奨しています。
+[Bufbuild/buf](https://github.com/bufbuild/buf)とは、Uberが作成していた[uber/prototool](https://github.com/uber/prototool)などのProtobufの問題を解決しようとしているツールです。また、prototoolなどのprotocサポートツールなどを、[Bufbuild/buf](https://github.com/bufbuild/buf)へ移行するためのドキュメントが作成されています。
 
 以下、 [uber/prototool](https://github.com/uber/prototool)から転用
 
@@ -65,7 +65,7 @@ PrototoolはサードパーティのProtobuf Parserを使用する一方で、�
 
 Homebrewでインストールが可能です。
 
-```sh
+```shellscript
 brew tap bufbuild/buf
 brew install buf
 ```
