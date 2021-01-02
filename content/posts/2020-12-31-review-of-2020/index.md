@@ -93,7 +93,10 @@ Yahoo! Japanの面接が多くなった。また、Yahoo! Japanと同様に期�
 
 ### 9月
 
-9月3日から11日まで[CyberAgentのインターンシップ](https://yoshikawa.dev/bufbuild)があった。
+9月3日から11日まで[CyberAgentのインターンシップ](https://yoshikawa.dev/cyberagent-intern)があった。このときに、以下の2点を実装した。
+
+- [Bufbuildツールの検証および実装](https://yoshikawa.dev/bufbuild)
+- [分散トレーシングシステム Zipkinの検証および実装](https://yoshikawa.dev/zipkin)
 
 9月15日から30日までマネーフォワードでインターンシップをした。
 
