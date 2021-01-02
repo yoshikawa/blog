@@ -1,5 +1,5 @@
 ---
-title: '楽天インターン'
+title: '楽天 インターンに参加しました'
 slug: rakuten-intern
 date: 2020-12-30
 published: true
