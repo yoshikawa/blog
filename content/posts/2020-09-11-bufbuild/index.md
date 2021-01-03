@@ -65,7 +65,7 @@ PrototoolはサードパーティのProtobuf Parserを使用する一方で、�
 
 Homebrewでインストールが可能です。
 
-```shellscript
+```shell
 brew tap bufbuild/buf
 brew install buf
 ```
