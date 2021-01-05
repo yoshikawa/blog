@@ -90,3 +90,9 @@ AbemaTVの今までと今後について、現在取り組んでいることに�
 [サイバーエージェントのAbemaTVで7日間インターンしてきた | ふじを録](https://ffjlabo.netlify.app/intern-at-abematv-for-7days)
 
 [Amebaでコード書いてた | takurinton.com](https://www.takurinton.com/post/18)
+
+### 合わせて読みたい
+
+[楽天 インターンに参加しました](https://yoshikawa.dev/rakuten-intern)
+
+[マネーフォワードのインターンでコンテナイメージ脆弱性検査](https://yoshikawa.dev/moneyforward-intern)

@@ -126,3 +126,9 @@ msb Tamachi 田町ステーションタワーNのレストランはキレイで�
 [Trivy + AWSによるコンテナイメージ脆弱性検査パイプラインの構築 | クックパッド開発者ブログ](https://techlife.cookpad.com/entry/catbox)
 
 [aquasecurity/trivy | GitHub.com](https://github.com/aquasecurity/trivy)
+
+### 合わせて読みたい
+
+[楽天 インターンに参加しました](https://yoshikawa.dev/rakuten-intern)
+
+[サイバーエージェント インターンに参加しました](https://yoshikawa.dev/cyberagent-intern)

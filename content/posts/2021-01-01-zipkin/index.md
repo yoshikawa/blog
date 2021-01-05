@@ -100,3 +100,11 @@ server = grpc.NewServer(grpc.StatsHandler(zipkingrpc.NewServerHandler(tracer)))
 [LINEのマイクロサービス環境における分散トレーシング](https://engineering.linecorp.com/ja/blog/distributed-tracing-line-microservice-environment/)
 
 [クックパッドと分散トレーシング](https://techlife.cookpad.com/entry/2017/09/06/115710)
+
+### 合わせて読みたい
+
+[楽天 インターンに参加しました](https://yoshikawa.dev/rakuten-intern)
+
+[サイバーエージェント インターンに参加しました](https://yoshikawa.dev/cyberagent-intern)
+
+[マネーフォワードのインターンでコンテナイメージ脆弱性検査](https://yoshikawa.dev/moneyforward-intern)

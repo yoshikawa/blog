@@ -83,3 +83,5 @@ tags:
 [楽天 インターンに参加しました](https://yoshikawa.dev/rakuten-intern)
 
 [サイバーエージェント インターンに参加しました](https://yoshikawa.dev/cyberagent-intern)
+
+[マネーフォワードのインターンでコンテナイメージ脆弱性検査](https://yoshikawa.dev/moneyforward-intern)

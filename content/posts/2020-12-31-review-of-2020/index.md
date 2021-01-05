@@ -98,7 +98,7 @@ Yahoo! Japanの面接が多くなった。また、Yahoo! Japanと同様に期�
 - [Bufbuildツールの検証および実装](https://yoshikawa.dev/bufbuild)
 - [分散トレーシングシステム Zipkinの検証および実装](https://yoshikawa.dev/zipkin)
 
-9月15日から30日までマネーフォワードでインターンシップをした。
+9月15日から30日まで[マネーフォワードでインターンシップ](https://yoshikawa.dev/moneyforward-intern)をした。
 
 電子情報通信学会ソサイエティ大会で発表をした。国内会議では初めての登壇。マネーフォワードには感謝しています🙏
 
@@ -129,3 +129,11 @@ Sansanには、多大なるご迷惑をおかけしました…本当に作法�
 内定もらって、各社に迷惑をかけるのも申し訳ないので、自ら本選考を2社辞退した。
 
 内定をもらった2社には、大変お世話になったし、この恩を大事にしていこうと強く決めた。
+
+### 合わせて読みたい
+
+[楽天 インターンに参加しました](https://yoshikawa.dev/rakuten-intern)
+
+[サイバーエージェント インターンに参加しました](https://yoshikawa.dev/cyberagent-intern)
+
+[マネーフォワードのインターンでコンテナイメージ脆弱性検査](https://yoshikawa.dev/moneyforward-intern)
