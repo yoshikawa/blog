@@ -17,6 +17,10 @@ const ContentBody = styled.div`
     padding-top: 3rem;
   }
 
+  & > h4 {
+    padding-top: 1.5rem;
+  }
+
   & > p {
     margin: 1em 0 0 0;
   }
