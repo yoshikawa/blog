@@ -49,7 +49,7 @@ const MagicScriptTag = () => {
   const terserOption = ({
     isReadable = false,
     isDevelopment = false,
-    ecma = 8, // specify one of: 5, 6, 7 or 8; use ES8/ES2017 for native async
+    ecma = 6, // specify one of: 5, 6, 7 or 8; use ES8/ES2017 for native async
     toplevel = false, // enable top level variable and function name mangling and to drop unused variables and functions
     globalDefineMap = {
       '__DEV__': Boolean(isDevelopment),

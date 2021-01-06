@@ -21,7 +21,70 @@ const colors = {
 }
 
 export const COLORS = {
-  ...colors,
+  grey100: {
+    light: colors.grey100,
+    dark: colors.grey100,
+  },
+  grey200: {
+    light: colors.grey200,
+    dark: colors.grey200,
+  },
+  grey300: {
+    light: colors.grey300,
+    dark: colors.grey300,
+  },
+  grey400: {
+    light: colors.grey400,
+    dark: colors.grey400,
+  },
+  grey500: {
+    light: colors.grey500,
+    dark: colors.grey500,
+  },
+  grey600: {
+    light: colors.grey600,
+    dark: colors.grey600,
+  },
+  grey700: {
+    light: colors.grey700,
+    dark: colors.grey700,
+  },
+  grey800: {
+    light: colors.grey800,
+    dark: colors.grey800,
+  },
+  grey900: {
+    light: colors.grey900,
+    dark: colors.grey900,
+  },
+  white: {
+    light: colors.white,
+    dark: colors.white,
+  },
+  yellow: {
+    light: colors.yellow,
+    dark: colors.yellow,
+  },
+  lightYellow: {
+    light: colors.lightYellow,
+    dark: colors.lightYellow,
+  },
+  blueGreyed: {
+    light: colors.blueGreyed,
+    dark: colors.blueGreyed,
+  },
+  darkBlue: {
+    light: colors.darkBlue,
+    dark: colors.darkBlue,
+  },
+  beige: {
+    light: colors.beige,
+    dark: colors.beige,
+  },
+  red: {
+    light: colors.red,
+    dark: colors.red,
+  },
   text: {
     light: colors.grey500,
     dark: colors.white,
