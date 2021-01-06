@@ -13,87 +13,87 @@ tags:
   - golang
 ---
 
-**この記事は、VOYAGE GROUPのサマーインターン、Treasure2018の修了生による**
+**この記事は、VOYAGE GROUP のサマーインターン、Treasure2018 の修了生による**
 
-**[Treasure Advent Calendar 2018](https://qiita.com/advent-calendar/2018/treasure) 25日目の記事です。**
+**[Treasure Advent Calendar 2018](https://qiita.com/advent-calendar/2018/treasure) 25 日目の記事です。**
 
 ---
 
 どうも、[よしかわ](https://twitter.com/yoshikawataiki)です。
 
-今回はHTTPの歴史について少し触れていきたいと思います。
+今回は HTTP の歴史について少し触れていきたいと思います。
 
-HTTPが出来てから30年近く経った現代に、どうWebを学習していくかを模索している僕のような若いエンジニアに読んでもらえるように必死に書きます。
+HTTP が出来てから 30 年近く経った現代に、どう Web を学習していくかを模索している僕のような若いエンジニアに読んでもらえるように必死に書きます。
 
 どうぞ、最後までお付き合いいただければ光栄です。
 
 ### 対象読者
 
-- HTTPの理解をしたい人
+- HTTP の理解をしたい人
 - Web サービスを開発している人
-- これからWebサービスを開発していきたい人
+- これから Web サービスを開発していきたい人
 
 ### 目次
 
-  - [対象読者](#%E5%AF%BE%E8%B1%A1%E8%AA%AD%E8%80%85)
-  - [目次](#%E7%9B%AE%E6%AC%A1)
-  - [はじめに](#%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB)
-  - [HTTPの歴史](#http%E3%81%AE%E6%AD%B4%E5%8F%B2)
-    - [HTTP/0.9](#http09)
-    - [HTTP/1.0](#http10)
-    - [HTTP/1.1](#http11)
-    - [HTTP/2](#http2)
-  - [メソッド](#%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89)
-  - [ヘッダー](#%E3%83%98%E3%83%83%E3%83%80%E3%83%BC)
-  - [ボディ](#%E3%83%9C%E3%83%87%E3%82%A3)
-  - [ステータスコード](#%E3%82%B9%E3%83%86%E3%83%BC%E3%82%BF%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89)
-  - [さいごに](#%E3%81%95%E3%81%84%E3%81%94%E3%81%AB)
-  - [参考文献](#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE)
+- [対象読者](#%E5%AF%BE%E8%B1%A1%E8%AA%AD%E8%80%85)
+- [目次](#%E7%9B%AE%E6%AC%A1)
+- [はじめに](#%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB)
+- [HTTP の歴史](#http%E3%81%AE%E6%AD%B4%E5%8F%B2)
+  - [HTTP/0.9](#http09)
+  - [HTTP/1.0](#http10)
+  - [HTTP/1.1](#http11)
+  - [HTTP/2](#http2)
+- [メソッド](#%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89)
+- [ヘッダー](#%E3%83%98%E3%83%83%E3%83%80%E3%83%BC)
+- [ボディ](#%E3%83%9C%E3%83%87%E3%82%A3)
+- [ステータスコード](#%E3%82%B9%E3%83%86%E3%83%BC%E3%82%BF%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89)
+- [さいごに](#%E3%81%95%E3%81%84%E3%81%94%E3%81%AB)
+- [参考文献](#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE)
 
 ### はじめに
 
-HTTPの歴史を話していく上で、いくつか便利なツールを紹介していきましょう。
+HTTP の歴史を話していく上で、いくつか便利なツールを紹介していきましょう。
 
-`curl`という便利なツールを使うことにより、HTTPのメソッドを試すことが出来るので、この機会に導入してみましょう。
+`curl`という便利なツールを使うことにより、HTTP のメソッドを試すことが出来るので、この機会に導入してみましょう。
 
-また、JSONを整形して表示したり集計したり、値を抜き取ったり出来るJSON用のgrepみたいなツールである`jq`を導入しましょう。
+また、JSON を整形して表示したり集計したり、値を抜き取ったり出来る JSON 用の grep みたいなツールである`jq`を導入しましょう。
 
-詳しくは、以下のURLからどうぞ。
+詳しくは、以下の URL からどうぞ。
 
-[curlについて学ぶ](https://yoshikawa.dev/curl)
+[curl について学ぶ](https://yoshikawa.dev/curl)
 
-### HTTPの歴史
+### HTTP の歴史
 
-HTTP/0.9 HTTP/1.0、HTTP/1.1、HTTP/2が存在します。
+HTTP/0.9 HTTP/1.0、HTTP/1.1、HTTP/2 が存在します。
 
-|発表年|バージョン|
-|--:|:--|
-|1991年|[HTTP/0.9](https://www.w3.org/Protocols/HTTP/AsImplemented.html)|
-|1996年|[HTTP/1.0](https://tools.ietf.org/html/rfc1945)|
-|1997年|[HTTP/1.1](https://tools.ietf.org/html/rfc2068)|
-|2015年|[HTTP/2](https://tools.ietf.org/html/rfc7540)|
+|  発表年 | バージョン                                                       |
+| ------: | :--------------------------------------------------------------- |
+| 1991 年 | [HTTP/0.9](https://www.w3.org/Protocols/HTTP/AsImplemented.html) |
+| 1996 年 | [HTTP/1.0](https://tools.ietf.org/html/rfc1945)                  |
+| 1997 年 | [HTTP/1.1](https://tools.ietf.org/html/rfc2068)                  |
+| 2015 年 | [HTTP/2](https://tools.ietf.org/html/rfc7540)                    |
 
-余談ですが[HTTP/3のドラフト](https://tools.ietf.org/html/draft-ietf-quic-http-16)が発表されましたので、興味のある方は見てみると良いかもしれません。
+余談ですが[HTTP/3 のドラフト](https://tools.ietf.org/html/draft-ietf-quic-http-16)が発表されましたので、興味のある方は見てみると良いかもしれません。
 
 #### HTTP/0.9
 
-最初のバージョンであるHTTP/0.9は、 **GETメソッドしか** 存在しませんでした。
+最初のバージョンである HTTP/0.9 は、 **GET メソッドしか** 存在しませんでした。
 
-HTTPヘッダーは存在しません。
+HTTP ヘッダーは存在しません。
 
-HTTPステータスコードも存在しません。
+HTTP ステータスコードも存在しません。
 
-応答は原則HTMLのみ。
+応答は原則 HTML のみ。
 
 とてもシンプルな設計です。
 
 [HTTP/1.0](https://tools.ietf.org/html/rfc1945)の設計を読めば、シンプルさが一目瞭然ですね。
 
-それでは、HTTP/0.9がどんなものか試してみましょう。
+それでは、HTTP/0.9 がどんなものか試してみましょう。
 
 ターミナルで以下のコマンドを実行します。
 
-livedoorにアクセスしてみましょう。
+livedoor にアクセスしてみましょう。
 
 ```bash
 ❯ echo -e "GET /\r\n" | nc livedoor.com 80
@@ -105,7 +105,7 @@ livedoorにアクセスしてみましょう。
 </html>
 ```
 
-Amazonにもアクセスしてみましょうか。
+Amazon にもアクセスしてみましょうか。
 
 ```bash
 ❯ echo -e "GET /\r\n" | nc amazon.com 80
@@ -119,29 +119,29 @@ Amazonにもアクセスしてみましょうか。
 </html>
 ```
 
-HTMLのみしか返ってきません。これがHTTP/0.9です。
+HTML のみしか返ってきません。これが HTTP/0.9 です。
 
-それでは、HTTP/1.0では、どんな機能が追加されていくのでしょうか。
+それでは、HTTP/1.0 では、どんな機能が追加されていくのでしょうか。
 
-予測してみましょう。僕ならドキュメントを1つではなく複数個送る機能がほしいです。
+予測してみましょう。僕ならドキュメントを 1 つではなく複数個送る機能がほしいです。
 
 あとは、ドキュメントの更新などもしたいし、クライアント側からのリクエストを明確に知りたいですね。
 
 #### HTTP/1.0
 
-上記の僕の欲しい機能がHTTP/1.0には搭載しています。
+上記の僕の欲しい機能が HTTP/1.0 には搭載しています。
 
-HTTP/1.0で、GET以外に **POSTやHEADメソッド** が利用できるようになりました。
+HTTP/1.0 で、GET 以外に **POST や HEAD メソッド** が利用できるようになりました。
 
-リクエスト時にHTTPバージョンが追加されました。
+リクエスト時に HTTP バージョンが追加されました。
 
 ヘッダーが表示されるようになりました。
 
 例えを以下に記述しましたので、見てみましょう。
 
-curlコマンドに、-v(もしくは --verbose)というオプションを追加して実行してみましょう。詳細な情報が表示されます。
+curl コマンドに、-v(もしくは --verbose)というオプションを追加して実行してみましょう。詳細な情報が表示されます。
 
-HTTPSならTLS handshakeの様子等が出力されますが、今回は省略します。
+HTTPS なら TLS handshake の様子等が出力されますが、今回は省略します。
 
 ```bash
 ❯ curl -v https://yoshikawa.dev
@@ -158,56 +158,56 @@ HTTPSならTLS handshakeの様子等が出力されますが、今回は省略�
 < HTTP/1.1 200 OK
 ```
 
-GETメソッドでHTTPのバージョンはHTTP1.1。(今回はバージョンが1.0ではないの大目に見てほしい)
+GET メソッドで HTTP のバージョンは HTTP1.1。(今回はバージョンが 1.0 ではないの大目に見てほしい)
 
-ヘッダーはHost、User-Agent、Accept。
+ヘッダーは Host、User-Agent、Accept。
 
-レスポンスの先頭にHTTPバージョンと3桁のステータスコードが含まれるようになりました。
+レスポンスの先頭に HTTP バージョンと 3 桁のステータスコードが含まれるようになりました。
 
 #### HTTP/1.1
 
-HTTP/1.0で目覚ましい進化をしましたが、欠点があります。それは、TCP/IPの1回のコネクションで1回のやり取りしか行なえませんでした。
+HTTP/1.0 で目覚ましい進化をしましたが、欠点があります。それは、TCP/IP の 1 回のコネクションで 1 回のやり取りしか行なえませんでした。
 
-HTTP/1.1では通信の高速化を図るために追加されたKeep-Aliveという機能。
+HTTP/1.1 では通信の高速化を図るために追加された Keep-Alive という機能。
 
-また、TLSによる暗号化通信のサポート。
+また、TLS による暗号化通信のサポート。
 
-PUTやDELETE、PATCHなどのメソッドの追加。
+PUT や DELETE、PATCH などのメソッドの追加。
 
-ただ、HTTP/1.1だと1つのコネクションで何回もやり取りが出来るものの、その中では1つのリクエストが完了するまで次のリクエストが送れません。
+ただ、HTTP/1.1 だと 1 つのコネクションで何回もやり取りが出来るものの、その中では 1 つのリクエストが完了するまで次のリクエストが送れません。
 
-例えば、1枚目の画像をダウンロードし終わったら、2枚目の画像のダウンロードが再開し、ダウンロードし終わったら、3枚目の画像のダウンロードが始まる。100枚あれば、どれくらい待たなければならないのか考えるだけで苦ですね。
+例えば、1 枚目の画像をダウンロードし終わったら、2 枚目の画像のダウンロードが再開し、ダウンロードし終わったら、3 枚目の画像のダウンロードが始まる。100 枚あれば、どれくらい待たなければならないのか考えるだけで苦ですね。
 
 #### HTTP/2
 
-HTTP/1.1でネックだった、バイナリデータを多重に送受信する仕組みに変更。
+HTTP/1.1 でネックだった、バイナリデータを多重に送受信する仕組みに変更。
 
-また、HTTP/2では **ヘッダーが圧縮される** ようになりました。
+また、HTTP/2 では **ヘッダーが圧縮される** ようになりました。
 
-僕のようなサイトでは、バイナリデータがあまりないので、HTTP/2の恩恵を受けれないので、画像まとめサイトとかだと重要な技術になってくるわけですね。
+僕のようなサイトでは、バイナリデータがあまりないので、HTTP/2 の恩恵を受けれないので、画像まとめサイトとかだと重要な技術になってくるわけですね。
 
-かなり多機能になったHTTPの歴史はまだまだ続きますが、一旦メソッドの紹介をしたいと思います。
+かなり多機能になった HTTP の歴史はまだまだ続きますが、一旦メソッドの紹介をしたいと思います。
 
 ### メソッド
 
-|メソッド名|説明|
-|:--|:--|
-|GET|リソースの取得|
-|POST|リソースの新規登録|
-|PUT|既存のリソースの更新|
-|DELETE|リソースの削除|
-|PATCH|リソースの一部変更|
-|HEAD|リソースのメタ情報の取得|
+| メソッド名 | 説明                     |
+| :--------- | :----------------------- |
+| GET        | リソースの取得           |
+| POST       | リソースの新規登録       |
+| PUT        | 既存のリソースの更新     |
+| DELETE     | リソースの削除           |
+| PATCH      | リソースの一部変更       |
+| HEAD       | リソースのメタ情報の取得 |
 
 ### ヘッダー
 
-curlコマンドを使ってヘッダーを送ってみましょう。
+curl コマンドを使ってヘッダーを送ってみましょう。
 
-[curlについて学ぶ](https://yoshikawa.dev/curl)にも書いてありますが、こちらにも記載します。
+[curl について学ぶ](https://yoshikawa.dev/curl)にも書いてありますが、こちらにも記載します。
 
-まず以下のURLからリポジトリをクローンしてください。
+まず以下の URL からリポジトリをクローンしてください。
 
-**Golangで書かれているため、配置ディレクトリに気をつけてください。**
+**Golang で書かれているため、配置ディレクトリに気をつけてください。**
 
 [https://github.com/yoshikawataiki/simple-api](https://github.com/yoshikawataiki/simple-api)
 
@@ -217,7 +217,7 @@ git clone git@github.com:yoshikawataiki/simple-api.git
 
 それではワークディレクトリを`simple-api`にして、以下のコマンドを実行します。
 
-Dockerが起動していることが前提ですので、ご了承を。
+Docker が起動していることが前提ですので、ご了承を。
 
 1. make docker/start
 2. make api/init
@@ -225,9 +225,9 @@ Dockerが起動していることが前提ですので、ご了承を。
 4. make migrate/up
 5. make run
 
-ではcurlコマンドでPOSTしてみましょう。
+では curl コマンドで POST してみましょう。
 
-JSONを見やすくするために、`| jq`をつけています。
+JSON を見やすくするために、`| jq`をつけています。
 
 ```bash
 curl -X POST -H "Content-Type:application/json" -d '{"name":"yoshikawa","email":"yoshikawa@hoge.com"}' localhost:8080/users | jq
@@ -235,9 +235,9 @@ curl -X POST -H "Content-Type:application/json" -d '{"name":"yoshikawa","email":
 
 上記の`-H "Content-Type:application/json"`について説明します。
 
-curlコマンドのオプションである`-H`は`--header`の省略でヘッダーを指定出来ます。
+curl コマンドのオプションである`-H`は`--header`の省略でヘッダーを指定出来ます。
 
-今回は、Content-Typeでjsonを指定しています。
+今回は、Content-Type で json を指定しています。
 
 ### ボディ
 
@@ -255,19 +255,13 @@ Content-Length: 16247
 
 ### ステータスコード
 
-[Treasure Advent Calendar 2018](https://qiita.com/advent-calendar/2018/treasure) 24日目の記事でりょーたろーが書いてくれましたので、端折ります。
+[Treasure Advent Calendar 2018](https://qiita.com/advent-calendar/2018/treasure) 24 日目の記事でりょーたろーが書いてくれましたので、端折ります。
 
-[Status Codeを下ネタで返すサーバーを書きました。](https://qiita.com/Dragon-taro/items/c99ee5814cc4a994e928)
-
-そういえば、今年の夏のインターンで分かりやすく紹介されていました。
-
-<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">3秒でわかるステータスコード<a href="https://twitter.com/hashtag/voyage_intern?src=hash&amp;ref_src=twsrc%5Etfw">#voyage_intern</a> <a href="https://t.co/LoiuT9ETHn">pic.twitter.com/LoiuT9ETHn</a></p>&mdash; tockn (@Tockn_inthebox) <a href="https://twitter.com/Tockn_inthebox/status/1030020851704332288?ref_src=twsrc%5Etfw">2018年8月16日</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+[Status Code を下ネタで返すサーバーを書きました。](https://qiita.com/Dragon-taro/items/c99ee5814cc4a994e928)
 
 ### さいごに
 
-僕より何年も人生の先輩であるHTTPについてまとめました。
+僕より何年も人生の先輩である HTTP についてまとめました。
 
 ここに書いたのはあくまでも一部であって、とても奥深いです。
 
@@ -275,7 +269,7 @@ Content-Length: 16247
 
 それでは、良いクリスマスを！！
 
-そして、VOYAGE GROUPのサマーインターン、Treasure2018の修了生でアドベントカレンダー記事を書いたみんな、お疲れ様でした！
+そして、VOYAGE GROUP のサマーインターン、Treasure2018 の修了生でアドベントカレンダー記事を書いたみんな、お疲れ様でした！
 
 [Treasure Advent Calendar 2018](https://qiita.com/advent-calendar/2018/treasure)はマジで面白い記事ばかりなので、必見！
 
@@ -285,4 +279,4 @@ Content-Length: 16247
 
 [渋川よしき著『Real World HTTP』(オライリー・ジャパン発行)](https://www.oreilly.co.jp/books/9784873118048/)
 
-[山本陽平著『Webを支える技術―― HTTP，URI，HTML，そしてREST』(技術評論社発行)](https://gihyo.jp/dp/ebook/2014/978-4-7741-7074-9)
+[山本陽平著『Web を支える技術―― HTTP，URI，HTML，そして REST』(技術評論社発行)](https://gihyo.jp/dp/ebook/2014/978-4-7741-7074-9)

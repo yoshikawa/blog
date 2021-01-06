@@ -58,7 +58,7 @@ GitHub の token を作成し、リポジトリの secrets に token を登録�
 
 あとは、`.github/workflows/reviewdog.yml` を作成したりするだけ。
 
-```yml
+```yaml
 name: reviewdog
 on: [pull_request]
 jobs:

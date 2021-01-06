@@ -1,5 +1,5 @@
 import React from 'react'
-import Terser from 'terser'
+import { minify } from 'terser'
 
 import {
   COLOR_MODE_KEY,
@@ -46,9 +46,27 @@ const MagicScriptTag = () => {
     .replace('🔑', COLOR_MODE_KEY)
     .replace('⚡️', INITIAL_COLOR_MODE_CSS_PROP)
 
+  const terserOption = ({
+    isReadable = false,
+    isDevelopment = false,
+    ecma = 8, // specify one of: 5, 6, 7 or 8; use ES8/ES2017 for native async
+    toplevel = false, // enable top level variable and function name mangling and to drop unused variables and functions
+    globalDefineMap = {
+      '__DEV__': Boolean(isDevelopment),
+      'process.env.NODE_ENV': isDevelopment ? 'development' : 'production'
+    }
+  } = {}) => ({
+    ecma,
+    toplevel,
+    compress: { ecma, toplevel, join_vars: false, sequences: false, global_defs: globalDefineMap },
+    mangle: isReadable ? false : { toplevel },
+    output: isReadable ? { ecma, beautify: true, indent_level: 2, width: 240 } : { ecma, beautify: false, semicolons: false },
+    sourceMap: false
+  })
+
   let calledFunction = `(${boundFn})()`
 
-  calledFunction = Terser.minify(calledFunction).code
+  calledFunction = minify(calledFunction, terserOption)
 
   // eslint-disable-next-line react/no-danger
   return <script dangerouslySetInnerHTML={{ __html: calledFunction }} />
@@ -63,12 +81,6 @@ const MagicScriptTag = () => {
  * Only light mode will be available for users with JS disabled.
  */
 const FallbackStyles = () => {
-  // Create a string holding each CSS variable:
-  /*
-    `--color-text: black;
-    --color-background: white;`
-  */
-
   const cssVariableString = Object.entries(COLORS).reduce(
     (acc, [name, colorByTheme]) => {
       return `${acc}\n--color-${name}: ${colorByTheme.light};`

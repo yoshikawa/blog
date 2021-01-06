@@ -15,64 +15,64 @@ tags:
 
 ## ここに記載されていること一覧
 
-- bufとは何か
-- Directory構成
-- 秘伝のMakefile
-- コンパイル用のDockerfile
-- Go fileの生成
-- JS, TS fileの生成
-- Doc fileの生成
+- buf とは何か
+- Directory 構成
+- 秘伝の Makefile
+- コンパイル用の Dockerfile
+- Go file の生成
+- JS, TS file の生成
+- Doc file の生成
 
-詰まる点は、コンパイルをするために、tools/tools.goを生成したり、bufから吐き出したimageをprotocにどう渡すかだと思います。
+詰まる点は、コンパイルをするために、tools/tools.go を生成したり、buf から吐き出した image を protoc にどう渡すかだと思います。
 
-## bufとは
+## buf とは
 
-[Bufbuild/buf](https://github.com/bufbuild/buf)とは、Uberが作成していた[uber/prototool](https://github.com/uber/prototool)などのProtobufの問題を解決しようとしているツールです。また、prototoolなどのprotocサポートツールなどを、[Bufbuild/buf](https://github.com/bufbuild/buf)へ移行するためのドキュメントが作成されています。
+[Bufbuild/buf](https://github.com/bufbuild/buf)とは、Uber が作成していた[uber/prototool](https://github.com/uber/prototool)などの Protobuf の問題を解決しようとしているツールです。また、prototool などの protoc サポートツールなどを、[Bufbuild/buf](https://github.com/bufbuild/buf)へ移行するためのドキュメントが作成されています。
 
 以下、 [uber/prototool](https://github.com/uber/prototool)から転用
 
->Update: We recommend checking out [Buf](https://github.com/bufbuild/buf), which is under active development.
+> Update: We recommend checking out [Buf](https://github.com/bufbuild/buf), which is under active development.
 >
->There are a ton of docs for getting started, including for p[migration from Prototool](https://buf.build/docs/migration-prototool/).
+> There are a ton of docs for getting started, including for p[migration from Prototool](https://buf.build/docs/migration-prototool/).
 
-自動でファイル検出したり、lintが強いです。
+自動でファイル検出したり、lint が強いです。
 
-また、コンパイルも高速で、protocのプロトコルプラグインとして使用していきます。
+また、コンパイルも高速で、protoc のプロトコルプラグインとして使用していきます。
 
-bufを使うモチベーションとして、Makefileのシェル芸に記載していますが、protoc用のFileDescriptorSetsを生成して、それを元にprotocがgoに置換するところです。
+buf を使うモチベーションとして、Makefile のシェル芸に記載していますが、protoc 用の FileDescriptorSets を生成して、それを元に protoc が go に置換するところです。
 
-つまり、protoだけではなくprotobufのFileDescriptorSetsを介することによってprotoのバージョンに依存しないschemaの管理が出来、またbufを介した上でのprotocが保証されています。
+つまり、proto だけではなく protobuf の FileDescriptorSets を介することによって proto のバージョンに依存しない schema の管理が出来、また buf を介した上での protoc が保証されています。
 
-### Prototoolとの違いは？
+### Prototool との違いは？
 
-[Migration Prototool](https://buf.build/docs/migration-prototool/)にbufとの違いが記載されています。
+[Migration Prototool](https://buf.build/docs/migration-prototool/)に buf との違いが記載されています。
 
-一番大きいところでいうと、bufは現在、フォーマッターがありません。
+一番大きいところでいうと、buf は現在、フォーマッターがありません。
 
-Prototoolでは、 `prototool format` でフォーマットされます。
+Prototool では、 `prototool format` でフォーマットされます。
 
-しかしながら、prototoolには大きな欠点があります。
+しかしながら、prototool には大きな欠点があります。
 
-PrototoolはサードパーティのProtobuf Parserを使用する一方で、ファイルが有効であるかを確認するために、さらにシェル化します。
+Prototool はサードパーティの Protobuf Parser を使用する一方で、ファイルが有効であるかを確認するために、さらにシェル化します。
 
-ユースケースとしては、特定の proto ファイルだけが変更されて配布されてしまった場合に全体的なAPIで不整合が起こったりするのをbufで多少防げるようになります。
+ユースケースとしては、特定の proto ファイルだけが変更されて配布されてしまった場合に全体的な API で不整合が起こったりするのを buf で多少防げるようになります。
 
-上記に記載しましたが、FileDescriptorSetsを介することによってprotoのバージョンに依存しないschemaの管理が出来、またbufを介した上でのprotocが保証されているのが、bufのメリットの一部です。
+上記に記載しましたが、FileDescriptorSets を介することによって proto のバージョンに依存しない schema の管理が出来、また buf を介した上での protoc が保証されているのが、buf のメリットの一部です。
 
-### bufの導入
+### buf の導入
 
 日本語の資料が少なく、公式ドキュメントも十分でないため、参考文献を交えて、話を進めていきます。
 
-Homebrewでインストールが可能です。
+Homebrew でインストールが可能です。
 
 ```shell
 brew tap bufbuild/buf
 brew install buf
 ```
 
-### Directory構成
+### Directory 構成
 
-```
+```shell
 /
 ├── Makefile     秘伝のMakefile
 ├── Dockerfile   コンパイル用のDockerfile
@@ -86,9 +86,9 @@ brew install buf
    └── go.sum    go moduleのsum
 ```
 
-### 秘伝のMakefile
+### 秘伝の Makefile
 
-root直下にMakefileを作成します。
+root 直下に Makefile を作成します。
 
 ```makefile
 docker-build: ## docker build
@@ -127,15 +127,15 @@ help: ## Display this help screen
 	@grep -E '^[a-zA-Z/_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 ```
 
-### コンパイル用のDockerfile
+### コンパイル用の Dockerfile
 
-root直下にDockerfileを作成します。
+root 直下に Dockerfile を作成します。
 
-PROTOCのバージョンを固定したいときは、定数を変えてください。
+PROTOC のバージョンを固定したいときは、定数を変えてください。
 
-あと、WORKDIRもプロジェクトに合わせて変更が必要です。
+あと、WORKDIR もプロジェクトに合わせて変更が必要です。
 
-```Dockerfile
+```dockerfile
 FROM golang:1.15
 
 # バージョン固定
@@ -172,26 +172,26 @@ RUN go install google.golang.org/protobuf/cmd/protoc-gen-go && \
 ENV PATH $PATH:$GOROOT:$GOPATH:$GOBIN:$GOPATH/protoc/bin:/go/bin
 ```
 
-### buf.yamlの書き方
+### buf.yaml の書き方
 
-上記のように、buildのrootsをエントリーポイント（protoが定義されている箇所）として設定します。
+上記のように、build の roots をエントリーポイント（proto が定義されている箇所）として設定します。
 
 ```yaml
 # buf.yaml
 build:
   roots:
-  - src
+    - src
 lint:
   use:
-  - STYLE_BASIC
+    - STYLE_BASIC
   except:
-  - ONEOF_LOWER_SNAKE_CASE
-  - PACKAGE_LOWER_SNAKE_CASE
+    - ONEOF_LOWER_SNAKE_CASE
+    - PACKAGE_LOWER_SNAKE_CASE
 ```
 
-### Goファイルの生成
+### Go ファイルの生成
 
-```
+```shell
 /
 ├── Makefile     秘伝のMakefile
 ├── Dockerfile   コンパイル用のDockerfile
@@ -205,9 +205,9 @@ lint:
    └── go.sum    go moduleのsum
 ```
 
-MakefileとDockerfileを設置して生成していきましょう。
+Makefile と Dockerfile を設置して生成していきましょう。
 
-また、**tools/tools.goを作成して、 go.modなどを作成することで、コンパイルを可能にします。**
+また、**tools/tools.go を作成して、 go.mod などを作成することで、コンパイルを可能にします。**
 
 ```go
 // tools/tools.go
@@ -223,11 +223,11 @@ import (
 )
 ```
 
-`make docker-build && make protoc` または Dockerを使用しない場合は、`make buf-gen` でGoファイルが生成されます。
+`make docker-build && make protoc` または Docker を使用しない場合は、`make buf-gen` で Go ファイルが生成されます。
 
-#### 生成されるGoファイル
+#### 生成される Go ファイル
 
-```
+```shell
 /
 └──/ go                   grpcやmock, validateのGoファイル群
    ├── ○○.pb.go
@@ -236,9 +236,9 @@ import (
    └── ○○_grpc.pb.go
 ```
 
-### JavaScript TypeScriptファイルの生成
+### JavaScript TypeScript ファイルの生成
 
-JavaScript, TypeScriptファイルの生成をしたい場合は、root直下にpackage.jsonを作成します。
+JavaScript, TypeScript ファイルの生成をしたい場合は、root 直下に package.json を作成します。
 
 ```json
 // package.json
@@ -261,11 +261,11 @@ JavaScript, TypeScriptファイルの生成をしたい場合は、root直下に
 }
 ```
 
-`make buf-js` でJavaScript, TypeScriptファイルが生成されます。
+`make buf-js` で JavaScript, TypeScript ファイルが生成されます。
 
-#### 生成されるJS, TSファイル
+#### 生成される JS, TS ファイル
 
-```
+```shell
 /
 └──/ js                     grpc実装用のJS, TSファイル群
    ├── ○○_grpc_web_pb.d.ts
@@ -280,8 +280,8 @@ JavaScript, TypeScriptファイルの生成をしたい場合は、root直下に
 
 #### Lint
 
-bufでlintにGoogle Style Guideを導入します。
+buf で lint に Google Style Guide を導入します。
 
-すでに、buf.yamlに記載されているので、割愛させていただきます。
+すでに、buf.yaml に記載されているので、割愛させていただきます。
 
 詳しくは、[Migration Prototool](https://buf.build/docs/migration-prototool#google)で確認できます。
