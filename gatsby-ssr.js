@@ -52,21 +52,29 @@ const MagicScriptTag = () => {
     ecma = 6, // specify one of: 5, 6, 7 or 8; use ES8/ES2017 for native async
     toplevel = false, // enable top level variable and function name mangling and to drop unused variables and functions
     globalDefineMap = {
-      '__DEV__': Boolean(isDevelopment),
-      'process.env.NODE_ENV': isDevelopment ? 'development' : 'production'
-    }
+      __DEV__: Boolean(isDevelopment),
+      'process.env.NODE_ENV': isDevelopment ? 'development' : 'production',
+    },
   } = {}) => ({
     ecma,
     toplevel,
-    compress: { ecma, toplevel, join_vars: false, sequences: false, global_defs: globalDefineMap },
+    compress: {
+      ecma,
+      toplevel,
+      join_vars: false,
+      sequences: false,
+      global_defs: globalDefineMap,
+    },
     mangle: isReadable ? false : { toplevel },
-    output: isReadable ? { ecma, beautify: true, indent_level: 2, width: 240 } : { ecma, beautify: false, semicolons: false },
-    sourceMap: false
+    output: isReadable
+      ? { ecma, beautify: true, indent_level: 2, width: 240 }
+      : { ecma, beautify: false, semicolons: false },
+    sourceMap: false,
   })
 
   let calledFunction = `(${boundFn})()`
 
-  calledFunction = minify(calledFunction, terserOption)
+  calledFunction = minify(calledFunction, terserOption).code
 
   // eslint-disable-next-line react/no-danger
   return <script dangerouslySetInnerHTML={{ __html: calledFunction }} />
@@ -94,8 +102,8 @@ const FallbackStyles = () => {
 }
 
 export const onRenderBody = ({ setPreBodyComponents, setHeadComponents }) => {
-  setHeadComponents(<FallbackStyles />)
-  setPreBodyComponents(<MagicScriptTag />)
+  setHeadComponents(<FallbackStyles key="fallback-styles"/>)
+  setPreBodyComponents(<MagicScriptTag key="magicscript-tag"/>)
 }
 
 export const wrapPageElement = ({ element }) => {
