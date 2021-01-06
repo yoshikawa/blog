@@ -2,7 +2,6 @@
 title: "About"
 slug: about
 cover: ./gatsby-cover.png
-disqus: true
 ---
 
 ## 略歴

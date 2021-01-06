@@ -2,7 +2,6 @@
 title: "Works"
 slug: works
 cover: ./cover.png
-disqus: true
 ---
 
 ### 2020

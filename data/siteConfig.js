@@ -10,7 +10,6 @@ module.exports = {
   高校からの親友と2021年に起業することを決めている。また、2021年に自身の会社を立ち上げる予定である。
   `,
   siteUrl: 'https://yoshikawa.dev',
-  disqusSiteUrl: 'https://yoshikawa.dev/',
   siteCover: 'cover.jpg', // file in content/images
   googleAnalyticsId: 'UA-87746836-1',
   background_color: '#00232a',
@@ -18,7 +17,6 @@ module.exports = {
   display: 'standalone',
   icon: 'content/images/icon.png',
   postsPerPage: 6,
-  disqusShortname: 'yoshikawa',
   headerTitle: 'よしかわーるど',
   headerLinksIcon: 'icon.png', //  (leave empty to disable: '')
   headerLinks: [
