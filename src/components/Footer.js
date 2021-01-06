@@ -50,7 +50,7 @@ const FooterWrapper = styled.footer`
     color: var(--color-white);
 
     & a {
-      padding: 0.25rem 0;
+      padding: 0.5rem 0;
       display: block;
     }
   }
