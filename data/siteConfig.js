@@ -13,7 +13,7 @@ module.exports = {
   disqusSiteUrl: 'https://yoshikawa.dev/',
   siteCover: 'cover.jpg', // file in content/images
   googleAnalyticsId: 'UA-87746836-1',
-  background_color: '#ffffff',
+  background_color: '#00232a',
   theme_color: '#222222',
   display: 'standalone',
   icon: 'content/images/icon.png',
