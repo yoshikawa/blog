@@ -95,6 +95,9 @@ module.exports = {
         theme_color: config.theme_color,
         display: config.display,
         icon: config.icon,
+        icon_options: {
+          purpose: `maskable`,
+        },
       },
     },
     // https://www.gatsbyjs.org/docs/themes/converting-a-starter/#transpiling-your-theme-with-webpack
