@@ -9,7 +9,7 @@ module.exports = {
   モバイルネットワークについて研究をしている。現在、ネットワークが抱えている問題を解決するための技術を研究室独自で開発中。
   高校からの親友と2021年に起業することを決めている。また、2021年に自身の会社を立ち上げる予定である。
   `,
-  siteUrl: 'https://yoshikawa.dev/',
+  siteUrl: 'https://yoshikawa.dev',
   disqusSiteUrl: 'https://yoshikawa.dev/',
   siteCover: 'cover.jpg', // file in content/images
   googleAnalyticsId: 'UA-87746836-1',
