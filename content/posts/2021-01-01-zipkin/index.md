@@ -4,7 +4,7 @@ slug: zipkin
 date: 2021-01-01
 published: true
 unlisted: false
-language: jp
+language: ja
 cover: ./discover.png
 imageShare: ./discover.png
 tags:

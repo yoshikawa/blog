@@ -4,7 +4,7 @@ slug: 2020birtyday
 date: 2020-08-22
 published: true
 unlisted: false
-language: jp
+language: ja
 cover: ./diary.jpg
 imageShare: ./diary.jpg
 tags:

@@ -4,7 +4,7 @@ slug: 2020-internship
 date: 2020-08-21
 published: true
 unlisted: false
-language: jp
+language: ja
 cover: ./2020-intern-cover.jpg
 imageShare: ./2020-intern-cover.jpg
 tags:

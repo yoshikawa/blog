@@ -4,7 +4,7 @@ slug: makefile
 date: 2020-04-19
 published: true
 unlisted: false
-language: jp
+language: ja
 cover: ./make_help.png
 imageShare: ./make_help.png
 tags:

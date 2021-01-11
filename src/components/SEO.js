@@ -4,7 +4,7 @@ import { withPrefix } from 'gatsby'
 import useSiteMetadata from '../hooks/use-site-config'
 
 const SEO = props => {
-  const { isBlogPost, path = '', lang = 'en' } = props
+  const { isBlogPost, path = '', lang = 'ja' } = props
   const {
     siteTitle,
     siteUrl,

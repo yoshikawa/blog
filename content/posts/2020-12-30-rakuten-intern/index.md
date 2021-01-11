@@ -4,7 +4,7 @@ slug: rakuten-intern
 date: 2020-12-30
 published: true
 unlisted: false
-language: jp
+language: ja
 cover: ../2020-08-21-summer-intern/2020-intern-cover.jpg
 imageShare: ../2020-08-21-summer-intern/2020-intern-cover.jpg
 tags:

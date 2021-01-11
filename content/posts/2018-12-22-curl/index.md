@@ -4,7 +4,7 @@ slug: curl
 date: 2018-12-22
 published: true
 unlisted: false
-language: jp
+language: ja
 cover: ./github-lawn.jpg
 imageShare: ./github-lawn.jpg
 tags:

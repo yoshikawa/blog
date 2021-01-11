@@ -4,7 +4,7 @@ slug: basic-ruby
 date: 2018-09-06
 published: true
 unlisted: false
-language: jp
+language: ja
 cover: ./ruby.jpg
 imageShare: ./ruby.jpg
 tags:

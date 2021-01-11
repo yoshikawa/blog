@@ -4,7 +4,7 @@ slug: yoga
 date: 2018-10-16
 published: true
 unlisted: false
-language: jp
+language: ja
 cover: ./thinkpad3.jpg
 imageShare: ./thinkpad3.jpg
 tags:

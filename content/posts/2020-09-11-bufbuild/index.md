@@ -4,7 +4,7 @@ slug: bufbuild
 date: 2020-09-11
 published: true
 unlisted: false
-language: jp
+language: ja
 cover: ./bufbuild.png
 imageShare: ./bufbuild.png
 tags:

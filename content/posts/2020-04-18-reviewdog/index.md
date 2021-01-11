@@ -4,7 +4,7 @@ slug: reviewdog
 date: 2020-04-18
 published: true
 unlisted: false
-language: jp
+language: ja
 cover: ./reviewdog.jpg
 imageShare: ./reviewdog.jpg
 tags:

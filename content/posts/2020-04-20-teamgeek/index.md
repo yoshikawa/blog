@@ -4,7 +4,7 @@ slug: teamgeek
 date: 2020-04-20
 published: true
 unlisted: false
-language: jp
+language: ja
 cover: ./teamgeek.png
 imageShare: ./teamgeek.png
 tags:

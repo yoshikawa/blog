@@ -4,7 +4,7 @@ slug: aspiration-2021
 date: 2021-01-04
 published: true
 unlisted: false
-language: jp
+language: ja
 cover: ../2020-08-22-my-birthday/diary.jpg
 imageShare: ../2020-08-22-my-birthday/diary.jpg
 tags:

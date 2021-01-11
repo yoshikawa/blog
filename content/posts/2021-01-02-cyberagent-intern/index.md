@@ -4,7 +4,7 @@ slug: cyberagent-intern
 date: 2021-01-02
 published: true
 unlisted: false
-language: jp
+language: ja
 cover: ../2020-08-21-summer-intern/2020-intern-cover.jpg
 imageShare: ../2020-08-21-summer-intern/2020-intern-cover.jpg
 tags:

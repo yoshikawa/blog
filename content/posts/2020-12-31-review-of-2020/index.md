@@ -4,7 +4,7 @@ slug: review-of-2020
 date: 2020-12-31
 published: true
 unlisted: false
-language: jp
+language: ja
 cover: ../2020-08-22-my-birthday/diary.jpg
 imageShare: ../2020-08-22-my-birthday/diary.jpg
 tags:

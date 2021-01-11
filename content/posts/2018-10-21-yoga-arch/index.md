@@ -4,7 +4,7 @@ slug: yoga-arch
 date: 2018-10-21
 published: true
 unlisted: false
-language: jp
+language: ja
 cover: ../2018-10-16-yoga/thinkpad3.jpg
 imageShare: ../2018-10-16-yoga/thinkpad3.jpg
 tags:

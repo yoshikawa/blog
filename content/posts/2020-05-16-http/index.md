@@ -4,7 +4,7 @@ slug: http
 date: 2020-05-16
 published: true
 unlisted: false
-language: jp
+language: ja
 cover: ../2020-04-21-golang/gopher.png
 imageShare: ../2020-04-21-golang/gopher.png
 tags:
