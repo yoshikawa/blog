@@ -26,7 +26,6 @@ class BlogPostTemplate extends React.Component {
           path={post.frontmatter.slug}
           isBlogPost
         />
-
         <Hero
           heroImg={post.frontmatter.cover && post.frontmatter.cover.publicURL}
           title={post.frontmatter.title}

@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import ContentHeader from './ContentHeader'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
-import Share from './ShareButton'
 
 const ContentBody = styled.div`
   line-height: 1.6;
@@ -169,7 +168,6 @@ class Content extends React.Component {
         {(tags || date || translations) && (
           <ContentHeader date={date} tags={tags} translations={translations} />
         )}
-        <Share></Share>
         <ContentBody>
           <MDXRenderer>{content}</MDXRenderer>
         </ContentBody>
