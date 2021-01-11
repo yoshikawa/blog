@@ -18,7 +18,7 @@ module.exports = {
   icon: 'content/images/icon.png',
   postsPerPage: 6,
   headerTitle: 'よしかわーるど',
-  headerLinksIcon: 'icon.png', //  (leave empty to disable: '')
+  headerLinksIcon: '', //  (leave empty to disable: '')
   headerLinks: [
     {
       label: 'Blog',
