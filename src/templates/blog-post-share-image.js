@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql, withPrefix } from 'gatsby'
+import { StaticQuery, graphql, withPrefix } from 'gatsby'
 import styled from 'styled-components'
 import { createGlobalStyle } from 'styled-components'
 import useSiteMetadata from '../hooks/use-site-config'
@@ -129,16 +129,20 @@ const BlogPostShareImage = props => {
 
 export default BlogPostShareImage
 
-export const pageQuery = graphql`
-  query BlogPostShareImage($slug: String!) {
-    post: mdx(frontmatter: { slug: { eq: $slug } }) {
-      timeToRead
-      frontmatter {
-        title
-        cover {
-          publicURL
+export const pageQuery = (
+  <StaticQuery
+    query={graphql`
+      query BlogPostShareImage($slug: String) {
+        post: mdx(frontmatter: { slug: { eq: $slug } }) {
+          timeToRead
+          frontmatter {
+            title
+            cover {
+              publicURL
+            }
+          }
         }
       }
-    }
-  }
-`
+    `}
+  />
+)

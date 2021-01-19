@@ -20,7 +20,7 @@ const ArticleFooter = styled.footer`
 `
 
 const ShareFooter = styled.div`
-margin: 2rem 0 0;
+  margin: 2rem 0 0;
 `
 class Article extends React.Component {
   render() {
@@ -28,7 +28,7 @@ class Article extends React.Component {
 
     return (
       <ArticleWrapper>
-        <Share post={post}/>
+        <Share post={post} />
         <Content
           content={post.body}
           date={post.frontmatter.date}
@@ -36,7 +36,7 @@ class Article extends React.Component {
           translations={post.frontmatter.translations}
         />
         <ShareFooter>
-          <Share post={post}/>
+          <Share post={post} />
         </ShareFooter>
         <ArticleFooter>
           <Bio />

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 import styled from 'styled-components'
 import {
   FacebookShareButton,
@@ -6,10 +6,10 @@ import {
   FacebookIcon,
   TwitterIcon,
   LineShareButton,
-  LineIcon
-} from "react-share";
-import urljoin from "url-join";
-import config from "../../data/siteConfig";
+  LineIcon,
+} from 'react-share'
+import urljoin from 'url-join'
+import config from '../../data/siteConfig'
 
 const ShareContainer = styled.div`
   & > button {
@@ -19,10 +19,10 @@ const ShareContainer = styled.div`
 
 class Share extends React.Component {
   render() {
-    const { post } = this.props;
-    const url = urljoin(config.siteUrl, post.frontmatter.slug);
-    const mobile = this.props.mobile;
-    const iconSize = mobile ? 28 : 36;
+    const { post } = this.props
+    const url = urljoin(config.siteUrl, post.frontmatter.slug)
+    const mobile = this.props.mobile
+    const iconSize = mobile ? 28 : 36
 
     return (
       <ShareContainer>
@@ -36,8 +36,8 @@ class Share extends React.Component {
           <LineIcon round size={iconSize} />
         </LineShareButton>
       </ShareContainer>
-    );
+    )
   }
 }
 
-export default Share;
+export default Share
