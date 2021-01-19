@@ -12,9 +12,6 @@ module.exports = {
   pathPrefix: config.pathPrefix,
   plugins: [
     {
-      resolve: `gatsby-plugin-cname`,
-    },
-    {
       resolve: `gatsby-plugin-sitemap`,
     },
     {
