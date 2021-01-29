@@ -25,6 +25,7 @@ cover: ./gatsby-cover.png
 
 ### インターン歴
 
+- November 4-24, 2020: [ZOZOテクノロジーズ いつでもどこでもインターン](https://tech.zozo.com/recruit/2022intern/)
 - October 5-30, 2020: [Sansan Summer Intern](https://jp.corp-sansan.com/newgrads/ssi2020)
 - September 15-30, 2020: マネーフォワード インターン
 - September 3-11, 2020: [CyberAgent 7days サーバーサイド向け 体験就業型インターンシップ](https://www.cyberagent.co.jp/careers/students/event/detail/id=24424)

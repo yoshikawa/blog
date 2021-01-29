@@ -9,7 +9,7 @@ cover: ./cover.png
 #### international peer reviewed conference
 
 - October 13-16, 2020: 2020 IEEE 9th Global Conference on Consumer Electronics
-  - T. Yoshikawa, S. Isomura, H. Komura, S. Kubota, C. Nishiwaki, and K. Naito, “Performance Evaluation of Shared Library Supporting Multi-Platform for Overlay Network Protocol,” 2020 IEEE 9th Global Conference on Consumer Electronics (GCCE), October 2020(Accepted).
+  - [T. Yoshikawa, S. Isomura, H. Komura, S. Kubota, C. Nishiwaki, and K. Naito, “Performance Evaluation of Shared Library Supporting Multi-Platform for Overlay Network Protocol,” 2020 IEEE 9th Global Conference on Consumer Electronics (GCCE), October 2020.](https://ieeexplore.ieee.org/document/9292015)
 
 - February 28 - March 2, 2020: The 2020 RISP International Workshop on Nonlinear Circuits, Communications and Signal Processing
   - T. Yoshikawa, Y. Yamada, S. Isomura, K. Tanaka, and K. Naito, “Proposal of shared library supporting multi-platform for overlay network protocol,” RISP International Workshop on Nonlinear Circuits, Communications and Signal Processing 2020(NCSP), March 2020.
