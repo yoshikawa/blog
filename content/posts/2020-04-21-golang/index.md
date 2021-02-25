@@ -46,7 +46,7 @@ Windows や Linux をお使いの方は[Getting Started - The Go Programming Lan
 
 Mac の方は, 以下のコマンドを実行.
 
-```bash
+```shell
 brew install go
 ```
 
@@ -54,7 +54,7 @@ brew install go
 
 .bash_profile などのファイルに追記します。
 
-```bash
+```shell
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 ```
@@ -67,7 +67,7 @@ Go1.8 から GOPATH の指定がない場合、\$HOME/go がデフォルトで�
 
 ホームディレクトリ直下に go ディレクトリの作成を行います。
 
-```bash
+```shell
 mkdir go
 ```
 
@@ -75,7 +75,7 @@ GOPATH は、 **インポート文を解決するために使用されます**�
 
 現在の GOPATH を確認するには以下のコマンドを実行します.
 
-```bash
+```shell
 go env GOPATH
 ```
 
@@ -85,7 +85,7 @@ GOPATH 以下のディレクトリ構成を知るのはとても良いことで�
 
 [GOPATH environment variable](https://golang.org/cmd/go/#hdr-GOPATH_environment_variable)を参考にすると良いかもしれません.
 
-```bash
+```shell
 GOPATH=/home/user/go
 
 /home/user/go/
@@ -139,13 +139,13 @@ func main() {
 
 ファイルを保存したディレクトリに移動して go build コマンドを実行します。
 
-```bash
+```shell
 go build hello.go
 ```
 
 今回は Mac OS X で開発するため、hello ファイルが作成されます。作成したファイルは以下のコマンドで実行出来ます。
 
-```bash
+```shell
 ./hello
 ```
 
@@ -157,7 +157,7 @@ go build hello.go
 
 go run コマンドは、コンパイルと実行を続けて行います。
 
-```bash
+```shell
 go run hello.go
 ```
 

@@ -95,7 +95,7 @@ HTTP ステータスコードも存在しません。
 
 livedoor にアクセスしてみましょう。
 
-```bash
+```shell
 ❯ echo -e "GET /\r\n" | nc livedoor.com 80
 
 <html>
@@ -107,7 +107,7 @@ livedoor にアクセスしてみましょう。
 
 Amazon にもアクセスしてみましょうか。
 
-```bash
+```shell
 ❯ echo -e "GET /\r\n" | nc amazon.com 80
 
 <html>
@@ -143,7 +143,7 @@ curl コマンドに、-v(もしくは --verbose)というオプションを追�
 
 HTTPS なら TLS handshake の様子等が出力されますが、今回は省略します。
 
-```bash
+```shell
 ❯ curl -v https://yoshikawa.dev
 
 ~~~~~~~~
@@ -211,7 +211,7 @@ curl コマンドを使ってヘッダーを送ってみましょう。
 
 [https://github.com/yoshikawataiki/simple-api](https://github.com/yoshikawataiki/simple-api)
 
-```bash
+```shell
 git clone git@github.com:yoshikawataiki/simple-api.git
 ```
 
@@ -229,7 +229,7 @@ Docker が起動していることが前提ですので、ご了承を。
 
 JSON を見やすくするために、`| jq`をつけています。
 
-```bash
+```shell
 curl -X POST -H "Content-Type:application/json" -d '{"name":"yoshikawa","email":"yoshikawa@hoge.com"}' localhost:8080/users | jq
 ```
 
@@ -243,7 +243,7 @@ curl コマンドのオプションである`-H`は`--header`の省略でヘッ�
 
 ヘッダーとの間に空行を挟んで、それ以降がすべてボディになります。
 
-```bash
+```shell
 ❯ curl -I https://yoshikawa.dev
 HTTP/1.1 200 OK
 Content-Type: text/html; charset=UTF-8

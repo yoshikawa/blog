@@ -51,7 +51,7 @@ curl は、libcurl と curl の 2 つの構成要素から成り立っていま�
 
 僕の Mac のデフォルトがこちらでした。
 
-```bash
+```shell
 $ curl --version
 curl 7.54.0 (x86_64-apple-darwin18.0) libcurl/7.54.0 LibreSSL/2.6.4 zlib/1.2.11 nghttp2/1.24.1
 Protocols: dict file ftp ftps gopher http https imap imaps ldap ldaps pop3 pop3s rtsp smb smbs smtp smtps telnet tftp
@@ -62,7 +62,7 @@ Homebrew で curl をインストールします。
 
 `brew install curl`
 
-```bash
+```shell
 $ curl --version
 curl 7.62.0 (x86_64-apple-darwin18.0.0) libcurl/7.62.0 SecureTransport zlib/1.2.11
 Release-Date: 2018-10-31
@@ -86,7 +86,7 @@ Docker をインストールしましょう。
 
 Homebrew でイントールするには以下のコマンドを実行します。
 
-```bash
+```shell
 brew cask install docker
 open /Applications/Docker.app
 ```
@@ -99,7 +99,7 @@ API を叩くために、まず以下の URL からリポジトリをクロー�
 
 [https://github.com/yoshikawataiki/simple-api](https://github.com/yoshikawataiki/simple-api)
 
-```bash
+```shell
 git clone git@github.com:yoshikawataiki/simple-api.git
 ```
 
@@ -117,7 +117,7 @@ Docker が起動していることが前提ですので、ご了承を。
 
 JSON を見やすくするために、`| jq`をつけています。
 
-```bash
+```shell
 curl -X POST -H "Content-Type:application/json" -d '{"name":"yoshikawa","email":"yoshikawa@hoge.com"}' localhost:8080/users | jq
 ```
 
@@ -135,7 +135,7 @@ curl -X POST -H "Content-Type:application/json" -d '{"name":"yoshikawa","email":
 
 それでは、curl コマンドで GET してみましょう。
 
-```bash
+```shell
 curl localhost:8080/users | jq
 ```
 

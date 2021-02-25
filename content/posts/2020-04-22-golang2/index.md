@@ -220,7 +220,7 @@ func main() {
 }
 ```
 
-```bash
+```shell
 go run main.go
 13
 104 119

@@ -49,7 +49,7 @@ Windows10 と Arch Linux をデュアルブートする
 
 ぶっちゃけ、スワップ領域いらないかもしれないですね。
 
-```bash
+```shell
 lsblk
 NAME          SIZE RO TYPE MOUNTPOINT
 nvme0n1       477G  0 disk
@@ -65,7 +65,7 @@ ext4 でフォーマットし、マウントする。
 
 デバイスファイルをまちがえないように！！
 
-```bash
+```shell
 mkfs.etx4 /dev/nvme0n1p5
 mkfs.etx4 /dev/nvme0n1p6
 mount /dev/nvme0n1p5 /mnt
@@ -78,7 +78,7 @@ mount /dev/nvme0n1p6 /mnt/home
 
 ArchWiki のインストールガイドにならって進めていきましょう。
 
-```bash
+```shell
 wifi-menu
 timedatectl set-ntp true
 vim /etc/pacman.d/mirrorlist
@@ -88,7 +88,7 @@ genfstab -p /mnt >> /mnt/etc/fstab
 
 ここからインストールしたシステムに切り替えて操作する。
 
-```bash
+```shell
 arch-chroot /mnt
 echo ThinkPad X1 Yoga > /etc/hostname
 ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
@@ -107,7 +107,7 @@ grub を使おうと思っていたら、grub は NVMe に対応していない�
 
 systemd-boot は、systemd に同梱されている。
 
-```bash
+```shell
 bootctl --path=/boot install
 vi /boot/loader/loader.conf
 # default  arch
@@ -128,7 +128,7 @@ vi /boot/loader/entries/arch.conf
 
 これで Arch Linux のインストールが完了したので、再起動してみましょう！
 
-```bash
+```shell
 exit
 umount -R /mnt
 reboot
