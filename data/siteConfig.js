@@ -11,7 +11,6 @@ module.exports = {
   `,
   siteUrl: 'https://yoshikawa.dev',
   siteCover: 'cover.jpg', // file in content/images
-  googleAnalyticsId: 'UA-87746836-1',
   background_color: '#00232a',
   theme_color: '#222222',
   display: 'standalone',
@@ -62,10 +61,12 @@ module.exports = {
         {
           label: 'GitHub',
           url: 'https://github.com/yoshikawa',
+          rel: 'external',
         },
         {
           label: 'Twitter',
           url: 'https://twitter.com/yoshikawataiki',
+          rel: 'external',
         },
       ],
     },

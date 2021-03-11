@@ -7,7 +7,7 @@ import Wrapper from '../components/Wrapper'
 import Hero from '../components/Hero'
 import SEO from '../components/SEO'
 
-export default props => {
+const Page = props => {
   const page = props.data.page
 
   return (
@@ -32,6 +32,8 @@ export default props => {
     </Layout>
   )
 }
+
+export default Page
 
 export const pageQuery = graphql`
   query($slug: String!) {

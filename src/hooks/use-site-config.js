@@ -29,6 +29,7 @@ const useSiteMetadata = () => {
             links {
               label
               url
+              rel
             }
           }
         }
