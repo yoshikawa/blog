@@ -104,6 +104,7 @@ const BlogPostShareImage = props => {
 
   return (
     <Wrapper width={width} height={height}>
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link
         href="https://fonts.googleapis.com/css?family=Rubik&display=swap"
         rel="stylesheet"
