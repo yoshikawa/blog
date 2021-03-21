@@ -26,7 +26,12 @@ class Share extends React.Component {
 
     return (
       <ShareContainer>
-        <TwitterShareButton url={url} title={post.frontmatter.title}>
+        <TwitterShareButton
+          url={url}
+          title={post.frontmatter.title}
+          via={config.twitterUsername}
+          hashtags={post.frontmatter.tags}
+        >
           <TwitterIcon round size={iconSize} />
         </TwitterShareButton>
         <FacebookShareButton url={url} quote={post.excerpt}>
