@@ -59,8 +59,8 @@
     "gatsby-transformer-remark": "^3.1.0",
     "gatsby-transformer-sharp": "^3.1.0",
     "prismjs": "^1.23.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
     "react-share": "^4.4.0",
     "styled-components": "^5.2.1",
@@ -73,7 +73,7 @@
   },
   "peerDependencies": {
     "gatsby": "^3.1.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }
