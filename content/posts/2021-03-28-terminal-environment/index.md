@@ -47,11 +47,64 @@ bash -c "$(curl -L https://raw.githubusercontent.com/yoshikawa/dotfiles/main/bin
 - tmux
 - neovim
 
+#### コマンドラインツールのインストール
+
+まずは，App StoreからXcodeをインストールする．
+
+インストール後，下記のコマンドを実行し，コマンドラインツールのインストールをする．
+
+```shell
+xcode-select --install
+```
+
+#### Homebrewのインストール
+
+[Homebrew](https://brew.sh/index_ja.html)とは，macOS（またはLinux）用パッケージマネージャーである．
+
+Homebrewは，AppleまたはLinuxシステムが提供していない必要なパッケージをインストールすることが可能である．
+
+```shell
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
 ### zsh
 
 最近，[MacOSXのデフォルトシェルがbashからzshに変更](https://support.apple.com/en-us/HT208050)になった．
 
+zshは，対話式シェルとしてもスクリプト言語インタプリタとしても使えるシェルである．
+
+bash, ksh, またtcshの便利な機能の多くがzshに組み込まれている．
+
+zshは，補完機能やスペル修正機能，コマンド履歴を共有，検索することが可能である．
+
+zshはグローバルエイリアスという機能がある．
+
+これは， `-g` を付けてエイリアス設定すると，コマンドの任意の場所で展開が可能である．
+
+```shell
+# グローバルエイリアスは -g をつける
+alias -g @g='| grep'
+alias -g @l='| less'
+```
+
+```shell
+brew install zsh
+```
+
+MacOSXでは，上記の通りデフォルトシェルがzshに変更されたが，デフォルトシェルを変更する方法は下記のコマンドである．
+
+```shell
+# シェルをzshに変更
+chsh -s $(which zsh)
+```
+
 #### zinit
+
+前述では，シェルをzshに設定した．
+
+zshの機能を拡張するためのプラグインを管理するプラグインマネージャを導入する．
+
+[zinit(旧名 zplugin)](https://github.com/zdharma/zinit)がオススメであるので，この記事ではzinitのセットアップを行う．
 
 ### tmux
 
