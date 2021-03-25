@@ -47,7 +47,7 @@ bash -c "$(curl -L https://raw.githubusercontent.com/yoshikawa/dotfiles/main/bin
 - tmux
 - neovim
 
-#### コマンドラインツールのインストール
+### コマンドラインツールのインストール
 
 まずは，App StoreからXcodeをインストールする．
 
@@ -57,7 +57,7 @@ bash -c "$(curl -L https://raw.githubusercontent.com/yoshikawa/dotfiles/main/bin
 xcode-select --install
 ```
 
-#### Homebrewのインストール
+### Homebrewのインストール
 
 [Homebrew](https://brew.sh/index_ja.html)とは，macOS（またはLinux）用パッケージマネージャーである．
 
@@ -98,7 +98,7 @@ MacOSXでは，上記の通りデフォルトシェルがzshに変更された�
 chsh -s $(which zsh)
 ```
 
-#### zinit
+### zinit
 
 前述では，シェルをzshに設定した．
 
@@ -106,10 +106,69 @@ zshの機能を拡張するためのプラグインを管理するプラグイ�
 
 [zinit(旧名 zplugin)](https://github.com/zdharma/zinit)がオススメであるので，この記事ではzinitのセットアップを行う．
 
+#### zinitのインストール
+
+[公式サイト](https://github.com/zdharma/zinit#installation)のとおり，zinitのインストールを行う．
+
+```shell
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
+```
+
+インストール後，zinitの設定が追記されているので，リロードを行い，zinit自体を最新にする．
+
+```shell
+source ~/.zshrc
+zinit self-update
+```
+
+これでzinitのインストール自体は完了．
+
+#### zinitのカスタマイズ
+
+次に，zinitのカスタマイズを行う．
+
+`~/.zshrc`を編集する．
+
+```shell
+autoload -U promptinit; promptinit
+
+ZPLUGIN_HOME=$HOME/.zinit
+source $ZPLUGIN_HOME/bin/zinit.zsh
+
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# plugins
+zinit snippet 'OMZ::plugins/git/git.plugin.zsh'
+zinit snippet 'OMZ::lib/clipboard.zsh'
+zinit snippet 'OMZ::lib/completion.zsh'
+zinit snippet 'OMZ::lib/compfix.zsh'
+
+zinit light 'zsh-users/zsh-autosuggestions'
+zinit light 'zsh-users/zsh-completions'
+zinit light 'zdharma/fast-syntax-highlighting'
+zinit light 'chrissicool/zsh-256color'
+zinit light 'paulirish/git-open'
+zinit light 'reegnz/jq-zsh-plugin'
+zinit light 'b4b4r07/emoji-cli'
+zinit light 'mollifier/anyframe'
+zinit light 'b4b4r07/enhancd'
+
+zinit load 'junegunn/fzf-bin'
+zinit load 'zdharma/history-search-multi-word'
+```
+
 ### tmux
 
 #### tpm
 
+```shell
+```
+
 ### Neovim
 
 最後にテキストエディタの設定です．
+
+#### dein.vimのインストール
+
+#### dein.vimのカスタマイズ
