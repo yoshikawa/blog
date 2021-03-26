@@ -5,8 +5,8 @@ date: 2021-03-28
 published: true
 unlisted: false
 language: ja
-cover: ../2020-08-22-my-birthday/diary.jpg
-imageShare: ../2020-08-22-my-birthday/diary.jpg
+cover: ./terminal.webp
+imageShare: ./terminal.webp
 tags:
   - terminal
   - zsh
@@ -95,7 +95,7 @@ alias -g @l='| less'
 
 ### zsh のインストール
 
-Homebrew を用いて，`zsh` をインストールします．
+Homebrew を用いて，`zsh` をインストールする．
 
 ```shell
 brew install zsh
@@ -266,6 +266,12 @@ Neovim について詳しく知りたい場合は，[こちら](https://qiita.co
 
 今回は，新世代の Vim，Neovim について設定をしていく．
 
+Homebrew を用いて，`Neovim` をインストールする．
+
+```shell
+brew install neovim
+```
+
 ### dein.vim
 
 dein.vim は，Vim/Neovim プラグインマネージャである．
@@ -282,7 +288,7 @@ Neovim を使用する場合，`.zshenv` に次の一文を入れないと動か
 export XDG_CONFIG_HOME="$HOME/.config"
 ```
 
-また，Python3 を使用しているプラグインを動作させるため事前にインストールが必要である．
+また，Python3 を使用しているプラグインを動作させるためには，Python 用のプラグインである`python3-neovim`をインストールする必要がある．
 
 ```shell
 brew install python3
@@ -316,7 +322,7 @@ endfunction
 call s:load('plugins')
 ```
 
-プラグインに関する設定は， `~/.config/nvim/rc/plugins.vim` に分割しているので，自分の環境に合わせて変更してほしい．
+プラグインに関する設定は， `$XDG_CONFIG_HOME/nvim/rc/plugins.vim` に分割しているので，自分の環境に合わせて変更してほしい．
 
 ```vim
 let s:dein_dir = expand('$DATA/dein')
@@ -356,7 +362,7 @@ endif
 
 プラグインは TOML 形式で記述が可能である．
 
-`~/.config/nvim/dein/plugins.toml` にインストールするプラグインを記述する．
+`$XDG_CONFIG_HOME/nvim/dein/plugins.toml` にインストールするプラグインを記述する．
 
 ```toml
 [[plugins]]
@@ -376,7 +382,7 @@ repo  = 'cespare/vim-toml'
 repo = 'fatih/vim-go'
 ```
 
-`~/.config/nvim/dein/lazy.toml` に遅延読み込みするプラグインを記述する．
+`$XDG_CONFIG_HOME/nvim/dein/lazy.toml` に遅延読み込みするプラグインを記述する．
 
 ```toml
 # dein.vim command
