@@ -102,6 +102,24 @@ const BlogPostShareImage = props => {
   const { fixed } = useSiteImages(authorAvatar)
   const siteCoverPath = useSiteImages(siteCover).fluid.src
 
+  const pageQuery = (
+    <StaticQuery
+      query={graphql`
+        query BlogPostShareImage($slug: String) {
+          post: mdx(frontmatter: { slug: { eq: $slug } }) {
+            timeToRead
+            frontmatter {
+              title
+              cover {
+                publicURL
+              }
+            }
+          }
+        }
+      `}
+    />
+  )
+
   return (
     <Wrapper width={width} height={height}>
       <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -129,21 +147,3 @@ const BlogPostShareImage = props => {
 }
 
 export default BlogPostShareImage
-
-export const pageQuery = (
-  <StaticQuery
-    query={graphql`
-      query BlogPostShareImage($slug: String) {
-        post: mdx(frontmatter: { slug: { eq: $slug } }) {
-          timeToRead
-          frontmatter {
-            title
-            cover {
-              publicURL
-            }
-          }
-        }
-      }
-    `}
-  />
-)
