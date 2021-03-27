@@ -1,8 +1,8 @@
 ---
 title: '【開発で差をつけろ！】僕が考えた最強のターミナル環境(zsh+tmux+Neovim)'
 slug: terminal-environment
-date: 2021-03-28
-published: true
+date: 2021-04-15
+published: false
 unlisted: false
 language: ja
 cover: ./terminal.webp
