@@ -71,6 +71,12 @@ Sansan はプロフェッショナルを求めているということを何回�
 
 また，エンジニアの作業スピードが尋常ではなく，僕もこんなエンジニアになりたいと強く思いました．
 
+インターン期間の平日は，全てのランチをごちそうになりました．
+
+ランチでは，色んな方とお話する貴重な機会を設けて頂きました．それもこれも，人事や皆様のおかげです．
+
+[Eight の取締役である塩見さん](https://bnl.media/2020/08/eight-shiomi.html)や [CTO の藤倉さん](https://type.jp/et/feature/11422/)，[チームリーダの藤井洋太郎さん](https://jp.corp-sansan.com/mimi/2020/09/interview-26.html)，[VPoE の宍倉さん](https://buildersbox.corp-sansan.com/entry/2019/06/19/110000)や様々な方とランチで意見を聞ける貴重な時間でした．
+
 ### 合わせて読みたい
 
 [楽天 インターンに参加しました](https://yoshikawa.dev/rakuten-intern)
