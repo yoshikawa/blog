@@ -12,15 +12,15 @@ tags:
 ---
 
 どうも、よしかわです。
-9月中旬に行われたマネーフォワードのインターンについて参加しましたので、忘れないうちにブログ記事にしていきます。
+9 月中旬に行われたマネーフォワードのインターンについて参加しましたので、忘れないうちにブログ記事にしていきます。
 
-インフラチームで2週間ほど開発して、得た知見や後輩へ思いが伝われば嬉しいです。
+インフラチームで 2 週間ほど開発して得た知見が伝われば嬉しいです。
 
 ### マネーフォワードについて
 
 公式サイト([https://corp.moneyforward.com/](https://corp.moneyforward.com/))を見てもらうのが一番手っ取り早いです。
 
-- [「お金を前へ。人生をもっと前へ。」の理念](https://corp.moneyforward.com/aboutus/mission/)のもと、テクノロジーでお金の問題を解決しているFinTech企業
+- [「お金を前へ。人生をもっと前へ。」の理念](https://corp.moneyforward.com/aboutus/mission/)のもと、テクノロジーでお金の問題を解決している FinTech 企業
 - 「[マネーフォワード ME](https://moneyforward.com/)」という家計簿アプリ、バックオフィスの業務効率向上を行う「[マネーフォワードクラウド](https://biz.moneyforward.com/)」など様々なプロダクトを手がけている
 
 #### オフィス風景
@@ -37,7 +37,7 @@ tags:
 
 ### インターンについて
 
-期間は、9月15日から30日までの2週間です。
+期間は、9 月 15 日から 30 日までの 2 週間です。
 
 職種は、インフラエンジニアとして採用されました。
 
@@ -46,7 +46,7 @@ tags:
 #### 配属部署
 
 前述のように、サービス基盤本部のインフラ部に配属でした。
-チームが2つあって、オンプレミス環境の保守・改善を手がけるチームとサーバのクラウド移行や改善を行うチームがあります。
+チームが 2 つあって、オンプレミス環境の保守・改善を手がけるチームとサーバのクラウド移行や改善を行うチームがあります。
 
 今回は、僕がやりたいことを選んだので、クラウド移行や改善を行うチームのほうへ。
 
@@ -55,10 +55,10 @@ tags:
 今回は、定期的にコンテナイメージ脆弱性検査を行う機構づくりをします。
 
 マネーフォワードではアプリケーションをコンテナ化し、Amazon EKS(Elastic Kubernetes Service)を用いて動作しています。
-CodeBuild, CodeDeployを使ったCI(Continuous Integration)/CD(Continuous Delivery)では、コードをアップロードした時に脆弱性スキャンが始まります。
+CodeBuild, CodeDeploy を使った CI(Continuous Integration)/CD(Continuous Delivery)では、コードをアップロードした時に脆弱性スキャンが始まります。
 
 しかしながら、コードを頻繁にアップロードしないサービスはどうでしょうか。
-脆弱性スキャンが走らず、脆弱性のあるコンテナが1週間、1ヶ月…とサービス運用に使われるケースもあるでしょう。
+脆弱性スキャンが走らず、脆弱性のあるコンテナが 1 週間、1 ヶ月…とサービス運用に使われるケースもあるでしょう。
 
 そのため、**定期的に**コンテナイメージ脆弱性検査を行う機構づくりをします
 
@@ -74,30 +74,30 @@ CodeBuild, CodeDeployを使ったCI(Continuous Integration)/CD(Continuous Delive
 - Amazon DynamoDB
 - Amazon EventBridge
 
-EKS内のKubernetes APIにポッド情報を取得してきて、DynamoDBにポッドの情報を保存します。
+EKS 内の Kubernetes API にポッド情報を取得してきて、DynamoDB にポッドの情報を保存します。
 
 次に、定期的にポッドの情報を取得し、キューに情報を送ります。
 
-キューは、Lambdaと紐づけていて、並列に脆弱性スキャンをかけるようにしました。
+キューは、Lambda と紐づけていて、並列に脆弱性スキャンをかけるようにしました。
 
-FargateでTrivyコンテナを起動させ、脆弱性スキャンを行います。
+Fargate で Trivy コンテナを起動させ、脆弱性スキャンを行います。
 
-脆弱性一覧は、DynamoDBに格納され、定期的にSlackに報告されます。(今回は、クリティカルとハイの脆弱性のみ報告)
+脆弱性一覧は、DynamoDB に格納され、定期的に Slack に報告されます。(今回は、クリティカルとハイの脆弱性のみ報告)
 
 #### タスク中に躓いたこと
 
 タスクを遂行するために経験した失敗をまとめていきます。
 
-AWSの知識がなかったので、最初のころは苦労をしました。
+AWS の知識がなかったので、最初のころは苦労をしました。
 まず、IAM(Identity and Access Management)が独特だったこと。
 
-一番躓いたことですが、脆弱性スキャンのTrivyでした。
+一番躓いたことですが、脆弱性スキャンの Trivy でした。
 
-Trivyですが、最初はLambda上で動かそうとしていました。
+Trivy ですが、最初は Lambda 上で動かそうとしていました。
 
-しかしながら、Lambdaだと実行ユーザがROOTユーザではないため、Trivyコマンドを実行出来ませんでした。
+しかしながら、Lambda だと実行ユーザが ROOT ユーザではないため、Trivy コマンドを実行出来ませんでした。
 
-そこで、仕方なくFargate上にTrivyを動作させるアーキテクチャ構成になっています。
+そこで、仕方なく Fargate 上に Trivy を動作させるアーキテクチャ構成になっています。
 
 メンターと構成を考えました。
 
@@ -117,13 +117,13 @@ Trivyですが、最初はLambda上で動かそうとしていました。
 
 ![ランチ画像1](./moneyforward-lunch1.webp)
 
-msb Tamachi 田町ステーションタワーNのレストランはキレイでした。
+msb Tamachi 田町ステーションタワー N のレストランはキレイでした。
 
 ![ランチ画像2](./moneyforward-lunch2.webp)
 
 ### 参考文献
 
-[Trivy + AWSによるコンテナイメージ脆弱性検査パイプラインの構築 | クックパッド開発者ブログ](https://techlife.cookpad.com/entry/catbox)
+[Trivy + AWS によるコンテナイメージ脆弱性検査パイプラインの構築 | クックパッド開発者ブログ](https://techlife.cookpad.com/entry/catbox)
 
 [aquasecurity/trivy | GitHub.com](https://github.com/aquasecurity/trivy)
 
@@ -132,3 +132,5 @@ msb Tamachi 田町ステーションタワーNのレストランはキレイで�
 [楽天 インターンに参加しました](https://yoshikawa.dev/rakuten-intern)
 
 [サイバーエージェント インターンに参加しました](https://yoshikawa.dev/cyberagent-intern)
+
+[Sansan のインターンで姓名分割](https://yoshikawa.dev/sansan-intern)
