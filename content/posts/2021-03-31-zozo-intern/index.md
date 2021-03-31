@@ -130,3 +130,11 @@ CTO，部長からのフィードバックは，まさに僕が躓いたこと�
 #### 検索チーム勉強会 -->
 
 ### 参考文献
+
+[Codecov](https://about.codecov.io/)
+
+[Coveralls](https://coveralls.io/)
+
+[コードメトリックスの値 | Microsoft document](https://docs.microsoft.com/ja-jp/visualstudio/code-quality/code-metrics-values)
+
+[Cobra | GitHub](https://github.com/spf13/cobra)
