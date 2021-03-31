@@ -122,3 +122,5 @@ Terraform で管理する経験がなかったので、楽しかったです。�
 [マネーフォワードのインターンでコンテナイメージ脆弱性検査](https://yoshikawa.dev/moneyforward-intern)
 
 [Sansan のインターンで姓名分割](https://yoshikawa.dev/sansan-intern)
+
+[ZOZO テクノロジーズのインターンでリファクタリング支援ツール作成](https://yoshikawa.dev/zozo-intern)

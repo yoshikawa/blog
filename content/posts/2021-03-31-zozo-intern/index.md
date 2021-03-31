@@ -138,3 +138,13 @@ CTO，部長からのフィードバックは，まさに僕が躓いたこと�
 [コードメトリックスの値 | Microsoft document](https://docs.microsoft.com/ja-jp/visualstudio/code-quality/code-metrics-values)
 
 [Cobra | GitHub](https://github.com/spf13/cobra)
+
+### 合わせて読みたい
+
+[楽天 インターンに参加しました](https://yoshikawa.dev/rakuten-intern)
+
+[サイバーエージェント インターンに参加しました](https://yoshikawa.dev/cyberagent-intern)
+
+[マネーフォワードのインターンでコンテナイメージ脆弱性検査](https://yoshikawa.dev/moneyforward-intern)
+
+[Sansan のインターンで姓名分割](https://yoshikawa.dev/sansan-intern)

@@ -87,3 +87,5 @@ Sansan はプロフェッショナルを求めているということを何回�
 [サイバーエージェント インターンに参加しました](https://yoshikawa.dev/cyberagent-intern)
 
 [マネーフォワードのインターンでコンテナイメージ脆弱性検査](https://yoshikawa.dev/moneyforward-intern)
+
+[ZOZO テクノロジーズのインターンでリファクタリング支援ツール作成](https://yoshikawa.dev/zozo-intern)

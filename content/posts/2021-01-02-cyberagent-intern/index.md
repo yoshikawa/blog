@@ -98,3 +98,5 @@ AbemaTV の今までと今後について、現在取り組んでいることに
 [マネーフォワードのインターンでコンテナイメージ脆弱性検査](https://yoshikawa.dev/moneyforward-intern)
 
 [Sansan のインターンで姓名分割](https://yoshikawa.dev/sansan-intern)
+
+[ZOZO テクノロジーズのインターンでリファクタリング支援ツール作成](https://yoshikawa.dev/zozo-intern)

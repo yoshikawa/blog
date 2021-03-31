@@ -134,3 +134,5 @@ msb Tamachi 田町ステーションタワー N のレストランはキレイ�
 [サイバーエージェント インターンに参加しました](https://yoshikawa.dev/cyberagent-intern)
 
 [Sansan のインターンで姓名分割](https://yoshikawa.dev/sansan-intern)
+
+[ZOZO テクノロジーズのインターンでリファクタリング支援ツール作成](https://yoshikawa.dev/zozo-intern)
