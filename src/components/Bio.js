@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Text } from './Commons'
 import useSiteMetadata from '../hooks/use-site-config'
 import useSiteImages from '../hooks/use-site-images'
+import { getSrc } from 'gatsby-plugin-image'
 
 const BioWrapper = styled.div`
   & .author-image {
@@ -58,14 +59,14 @@ const BioText = styled(Text)`
 
 const Bio = () => {
   const { authorAvatar, authorName, authorDescription } = useSiteMetadata()
-  const { fixed } = useSiteImages(authorAvatar)
+  const { gatsbyImageData } = useSiteImages(authorAvatar)
 
   return (
     <BioWrapper>
       <figure className="author-image">
         <div
           alt={authorName}
-          style={{ backgroundImage: `url("${fixed.src}")` }}
+          style={{ backgroundImage: `url(${getSrc(gatsbyImageData)})` }}
           className="img"
         />
       </figure>

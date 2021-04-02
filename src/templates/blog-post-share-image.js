@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { createGlobalStyle } from 'styled-components'
 import useSiteMetadata from '../hooks/use-site-config'
 import useSiteImages from '../hooks/use-site-images'
+import { getSrc } from 'gatsby-plugin-image'
 
 const GlobalPageStyle = createGlobalStyle`
   * {
@@ -99,8 +100,10 @@ const BlogPostShareImage = props => {
   const { width, height } = props.pageContext
   const heroImg = post.frontmatter.cover && post.frontmatter.cover.publicURL
   const { siteCover, authorAvatar, headerTitle } = useSiteMetadata()
-  const { fixed } = useSiteImages(authorAvatar)
-  const siteCoverPath = useSiteImages(siteCover).fluid.src
+  const avator = useSiteImages(authorAvatar).gatsbyImageData
+  const fixed = getSrc(avator)
+  const gatsbyImageData = useSiteImages(siteCover).gatsbyImageData
+  const siteCoverPath = getSrc(gatsbyImageData)
 
   const pageQuery = (
     <StaticQuery
@@ -132,7 +135,7 @@ const BlogPostShareImage = props => {
       <SiteTitle>{headerTitle}</SiteTitle>
       <Title>{post.frontmatter.title}</Title>
       <SubTitle>
-        <AuthorImg src={fixed.src} />
+        <AuthorImg src={fixed} />
         <ReadTime>{post.timeToRead} min read</ReadTime>
       </SubTitle>
       <Preview
