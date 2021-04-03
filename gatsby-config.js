@@ -72,11 +72,29 @@ module.exports = {
         plugins: [`gatsby-remark-images`],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: process.env.SITE_GTM_ID,
+
+        // Include GTM in development.
+        // Defaults to false meaning GTM will only be loaded in production.
+        includeInDevelopment: false,
+
+        // datalayer to be set before GTM is loaded
+        // should be an object or a function that is executed in the browser
+        // Defaults to null
+        defaultDataLayer: { platform: "gatsby" },
+
+        // Specify optional GTM environment details.
+        dataLayerName: 'dataLayer',
+      }
+    },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -92,6 +110,7 @@ module.exports = {
         },
       },
     },
+    `gatsby-plugin-offline`,
     // https://www.gatsbyjs.org/docs/themes/converting-a-starter/#transpiling-your-theme-with-webpack
     {
       resolve: 'gatsby-plugin-compile-es6-packages',

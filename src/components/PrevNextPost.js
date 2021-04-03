@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import { getSrc } from 'gatsby-plugin-image'
 import useSiteMetadata from '../hooks/use-site-config'
 import useSiteImages from '../hooks/use-site-images'
 import TagList from './TagList'
@@ -72,7 +73,8 @@ const PrevNextPost = props => {
   const { previous, next } = props
   const articles = [previous, next].filter(i => i).map(item => ({ node: item }))
   const { siteCover, defaultLang } = useSiteMetadata()
-  const { fluid } = useSiteImages(siteCover)
+  const source = useSiteImages(siteCover)
+  const fluid = getSrc(source)
 
   return (
     <Fragment>
@@ -86,7 +88,7 @@ const PrevNextPost = props => {
             slug,
             language,
           } = article.node.frontmatter
-          const heroImg = (cover && cover.publicURL) || fluid.src
+          const heroImg = (cover && cover.publicURL) || fluid
 
           return (
             <Preview key={`prev-next-${i}`}>

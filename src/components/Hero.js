@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { getSrc } from 'gatsby-plugin-image'
 import useSiteMetadata from '../hooks/use-site-config'
 import useSiteImages from '../hooks/use-site-images'
 
@@ -37,11 +38,12 @@ const HeroSubTitle = styled.h2`
 
 const Hero = props => {
   const { siteCover } = useSiteMetadata()
-  const { fluid } = useSiteImages(siteCover)
-  const heroImg = props.heroImg || fluid.src
+  const { gatsbyImageData } = useSiteImages(siteCover)
 
   return (
-    <HeroContainer style={{ backgroundImage: `url("${heroImg}")` }}>
+    <HeroContainer
+      style={{ backgroundImage: `url(${getSrc(gatsbyImageData)})` }}
+    >
       <TitleContainer>
         <HeroTitle>{props.title}</HeroTitle>
         {props.subTitle && <HeroSubTitle>{props.subTitle}</HeroSubTitle>}
