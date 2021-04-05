@@ -5,14 +5,16 @@ date: 2021-04-06
 published: true
 unlisted: false
 language: ja
-cover: ./terminal.webp
-imageShare: ./terminal.webp
+cover: ./terminal-image.jpg
+imageShare: ./terminal-image.jpg
 tags:
   - terminal
   - zsh
   - tmux
   - neovim
 ---
+
+![Terminal Environment](./terminal-image.webp)
 
 ## 僕が考えた最強のターミナル環境(zsh+tmux+Neovim)
 
