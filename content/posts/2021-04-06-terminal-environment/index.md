@@ -16,6 +16,8 @@ tags:
 
 ![Terminal Environment](./terminal-image.webp)
 
+**この記事は春のシス研 Advent Calendar 2021 の 9 日目の記事です．**
+
 ## 僕が考えた最強のターミナル環境(zsh+tmux+Neovim)
 
 新しいパソコンを買ったときや，OS をクリーンインストールしたときに開発環境を構築するのに手間を省きたい．
