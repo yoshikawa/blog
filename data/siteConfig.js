@@ -1,6 +1,6 @@
 module.exports = {
   siteTitle: 'よしかわーるど',
-  siteDescription: '情報系大学生が新しい世界を作る',
+  siteDescription: '2022年卒の情報系大学生がIT分野で奮闘するブログです。GoやRust, Reactなどを書いているので、OSS活動や研究に関することをまとめます。',
   authorName: 'Yoshikawa Taiki',
   twitterUsername: 'yoshikawataiki',
   authorAvatar: 'avatar.jpg', // file in content/images
